@@ -1,10 +1,10 @@
 <script>
-    import { Alert } from 'flowbite-svelte';
-</script>
+    
+    
+  </script>
 
-<div class="p-8">
-    <Alert>
-        <span class="font-medium">Info alert!</span>
-        Change a few things up and try submitting again.
-    </Alert>
-</div>
+<main>
+  <div>
+    <h1 color="white">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</h1>
+  </div>
+</main>

@@ -24,11 +24,9 @@
 		
 	}
   </style>
-
 <div class="layout w-full">
 	<div class="triangle">
 	</div>
 	<div class="sidebar"><Sidebar/></div>
 
 </div>
-<div>  </div>
