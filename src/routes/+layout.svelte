@@ -1,5 +1,34 @@
+
+
 <script>
 	import '../app.pcss';
+	import Sidebar from '../lib/sidebar.svelte';
+	
 </script>
 
-<slot />
+<style>
+	/* Stil für das Layout */
+	.layout {
+	  @apply flex justify-center items-center h-screen bg-background; /* Hintergrundfarbe */
+	}
+	.triangle {
+	align-items: top;
+    border-left: 30vw solid transparent;
+    border-right: 70vw solid transparent;
+    border-top: 28vw solid #724044;
+	position: absolute;
+    top: 0;
+	}
+	.sidebar {
+		@apply absolute left-0 top-0 w-screen; 
+		
+	}
+  </style>
+
+<div class="layout w-full">
+	<div class="triangle">
+	</div>
+	<div class="sidebar"><Sidebar/></div>
+
+</div>
+<div>  </div>
