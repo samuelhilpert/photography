@@ -13,7 +13,7 @@
 
 	}
 	.triangle {
-	align-items: top;
+
     border-left: 30vw solid transparent;
     border-right: 70vw solid transparent;
     border-top: 28vw solid #724044;
