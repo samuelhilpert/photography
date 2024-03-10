@@ -1,10 +1,8 @@
 <script>
-    
-    
-  </script>
-
-<main>
-  <div>
-    <h1 color="white">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</h1>
+let name = "Svenja";
+</script>
+<div class="content" style="z-index: 2">
+  <div class="bg-gray-200 p-4 rounded-md shadow-sm w-64 mx-auto">
+    <h1 class="text-center text-xl font-bold">Hallo {name}!</h1>
   </div>
-</main>
+  </div>
