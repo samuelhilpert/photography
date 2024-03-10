@@ -7,5 +7,9 @@
         <h1 class="text-center text-xl font-bold">Hallo {name}!</h1>
         <img alt="banner" src=':/photography/src/img/BannerIdee.png' /> 
       </div>
-
+    <div>
+        <a href="/auto" class="text-blue-600 hover:text-blue-800 underline"
+        >Click here to go checkout our colorscheme</a
+        >
+    </div>
 </main>
