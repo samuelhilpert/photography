@@ -21,10 +21,11 @@
 	}
 
 	.sidebar {
-		@apply fixed left-0 top-0;
+		@apply fixed left-0 top-0 ;
+		width: 14%;
 	}
 	.content{
-		margin-left: 10%;
+		margin-left: 14%;
 	}
 
 
