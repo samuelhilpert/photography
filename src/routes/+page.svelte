@@ -3,22 +3,21 @@
   import { Gallery , Carousel  } from 'flowbite-svelte';
   import bannerIdee from '$lib/img/BannerIdee.png';
     const images1 = [
-      { alt: 'erbology', src: bannerIdee }
+      { alt: 'banner', src: bannerIdee }
   ];
 </script>
     
 <style>
     .banner {
-        @apply  mt-6 pr-16 rounded-lg;
-        padding-top: 5%;
+        @apply   pr-16 rounded-lg;
         padding-left: 15%;
         }
 </style>
 
 <main class="content" style="position: relative">
     
-      <div class="banner">
-        <img src={bannerIdee} alt='banner'/>
+      <div >
+        <img class="banner" src={bannerIdee} alt='banner'/>
       </div>
       <div>
         <Gallery class="gap-4 grid-cols-2 md:grid-cols-4">
