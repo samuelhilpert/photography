@@ -16,12 +16,15 @@
 
 	}
 	.layout {
-		@apply flex justify-center items-center bg-background;
+		@apply flex bg-background h-screen;
 
 	}
 
 	.sidebar {
 		@apply fixed left-0 top-0;
+	}
+	.content{
+		margin-left: 10%;
 	}
 
 

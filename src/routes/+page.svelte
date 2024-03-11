@@ -9,10 +9,11 @@
       
   <style>
       .banner {
-          @apply rounded-lg;
-          margin-top: 5%;
+          @apply rounded-lg justify-center;
+          margin-top: 2%;
+          margin-left: 5%;
           margin-right: 5%;
-          margin-left: 15%;
+
           }
   </style>
   
