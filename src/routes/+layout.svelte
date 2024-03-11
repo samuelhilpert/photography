@@ -1,5 +1,3 @@
-
-
 <script>
 	import '../app.pcss';
 	import Sidebar from '../lib/sidebar.svelte';
@@ -23,20 +21,19 @@
 	}
 
 	.sidebar {
-		@apply relative left-0 top-0;
-
+		@apply fixed left-0 top-0;
 	}
 
 
 
 </style>
-<div class="layout w-full bg-background">
+<div class="layout bg-background">
 
 	<div class="triangle"></div>
-	<div class="sidebar"><Sidebar /></div>
 
 	<div class="content">
 		<slot></slot></div>
 
+		<div class="sidebar"><Sidebar /></div>
 
 </div>
