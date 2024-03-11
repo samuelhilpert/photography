@@ -7,7 +7,7 @@
   </script>
 
 
-  <Sidebar class="bg-secondary text-text w-1/6 h-screen border-2 border-background rounded-md">
+  <Sidebar class="bg-secondary text-text w-1/7 h-screen border-2 border-background rounded-md">
     <SidebarWrapper class="bg-secondary">
       <SidebarGroup class="bg-secondary">
         <SidebarItem label="Home" class="text-text icon-hover:text-secondary hover:text-secondary hover:bg-primary">

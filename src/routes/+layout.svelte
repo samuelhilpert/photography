@@ -18,19 +18,19 @@
 
 	}
 	.layout {
-		@apply flex justify-center items-center h-screen bg-background;
+		@apply flex justify-center items-center bg-background;
 
 	}
 
 	.sidebar {
-		@apply absolute left-0 top-0 w-screen;
+		@apply relative left-0 top-0;
 
 	}
 
 
 
 </style>
-<div class="layout w-full">
+<div class="layout w-full bg-background">
 
 	<div class="triangle"></div>
 	<div class="sidebar"><Sidebar /></div>
