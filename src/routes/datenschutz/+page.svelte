@@ -7,6 +7,7 @@
         </div>
 
     </div>
+
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <h2>
             <a href = "../" class="text-blue-600 hover:text-blue-800 underline">Click here to go back!</a>
