@@ -11,7 +11,7 @@
   <Sidebar class="w-full h-screen bg-secondary text-text border-2 border-background rounded-md">
     <SidebarWrapper class="bg-secondary">
       <SidebarGroup class="bg-secondary">
-        <SidebarItem label="Home" class="text-text icon-hover:text-secondary hover:text-secondary hover:bg-primary">
+        <SidebarItem label="Home" class="text-text icon-hover:text-secondary hover:text-secondary hover:bg-primary" href="/">
             <svelte:fragment slot="icon">
             <HomeSolid class="w-5 h-5 text-text transition duration-75 dark:text-text hover:text-secondary dark:group-hover:text-secondary" />
             </svelte:fragment>
@@ -20,18 +20,18 @@
             <svelte:fragment slot="icon">
             <CameraFotoSolid class="w-5 h-5 text-text transition duration-75 dark:text-text group-hover:text-secondary dark:group-hover:text-black" />
             </svelte:fragment>
-            <SidebarDropdownItem label="Auto" class="text-text hover:text-secondary hover:bg-primary"/>
-            <SidebarDropdownItem label="Motorrad" class="text-text hover:text-secondary hover:bg-primary" />
-            <SidebarDropdownItem label="Hund"  class="text-text hover:text-secondary hover:bg-primary"/>
-            <SidebarDropdownItem label="Pferd"  class="text-text hover:text-secondary hover:bg-primary"/>
-            <SidebarDropdownItem label="Mensch"  class="text-text hover:text-secondary hover:bg-primary"/>
+            <SidebarDropdownItem label="Auto" class="text-text hover:text-secondary hover:bg-primary" href="/autoPortfolio"/>
+            <SidebarDropdownItem label="Motorrad" class="text-text hover:text-secondary hover:bg-primary" href="/motorrad" />
+            <SidebarDropdownItem label="Hund"  class="text-text hover:text-secondary hover:bg-primary" href="/hund"/>
+            <SidebarDropdownItem label="Pferd"  class="text-text hover:text-secondary hover:bg-primary" href="/pferd"/>
+            <SidebarDropdownItem label="Mensch"  class="text-text hover:text-secondary hover:bg-primary" href="/mensch"/>
           </SidebarDropdownWrapper>
-        <SidebarItem label="Anfragen" class="text-text hover:text-secondary hover:bg-primary">
+        <SidebarItem label="Anfragen" class="text-text hover:text-secondary hover:bg-primary" href="/overviewAnfrage">
             <svelte:fragment slot="icon">
                 <ClipboardListSolid class="w-5 h-5 text-text transition duration-75 dark:text-text group-hover:text-secondary dark:group-hover:text-black" />
             </svelte:fragment>
         </SidebarItem>
-        <SidebarItem label="Info" class="text-text hover:text-secondary hover:bg-primary">
+        <SidebarItem label="Info" class="text-text hover:text-secondary hover:bg-primary" href="/impre">
             <svelte:fragment slot="icon">
                 <InfoCircleSolid class="w-5 h-5 text-text transition duration-75 dark:text-text group-hover:text-secondary dark:group-hover:text-black" />
             </svelte:fragment>

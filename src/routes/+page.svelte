@@ -30,8 +30,48 @@
           <img alt="bannerIdee" src={bannerIdee}/> 
         </div>
       <div>
-          <a href="/auto" class="text-blue-600 hover:text-blue-800 underline"
-          >Click here to go checkout our colorscheme</a
+          <a href="/autoPortfolio" class="text-blue-600 hover:text-blue-800 underline"
+          >Auto</a
+          >
+      </div>
+      <div>
+          <a href="/allgAnfrage" class="text-blue-600 hover:text-blue-800 underline"
+          >allgemeine Anfrage</a
+          >
+      </div>
+      <div>
+          <a href="/indivAnfrage" class="text-blue-600 hover:text-blue-800 underline"
+          >individuelle Anfrage</a
+          >
+      </div>
+      <div>
+          <a href="/overviewAnfrage" class="text-blue-600 hover:text-blue-800 underline"
+          >overview Anfrage</a
+          >
+      </div>
+      <div>
+          <a href="/motorrad" class="text-blue-600 hover:text-blue-800 underline"
+          >Motorrad</a
+          >
+      </div>
+      <div>
+          <a href="/hund" class="text-blue-600 hover:text-blue-800 underline"
+          >hund</a
+          >
+      </div>
+      <div>
+          <a href="/pferd" class="text-blue-600 hover:text-blue-800 underline"
+          >pferd</a
+          >
+      </div>
+      <div>
+          <a href="/mensch" class="text-blue-600 hover:text-blue-800 underline"
+          >mensch</a
+          >
+      </div>
+      <div>
+          <a href="/impre" class="text-blue-600 hover:text-blue-800 underline"
+          >Impressum/Datenschutz</a
           >
       </div>
   </main>

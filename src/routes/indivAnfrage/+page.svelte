@@ -2,7 +2,7 @@
 <main class="content" style="position: relative">
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
-            <h1>Study!</h1>
+            <h1>individuelle Anfrage!</h1>
             <p>Have fun Studying</p>
         </div>
 
