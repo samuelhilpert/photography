@@ -31,7 +31,7 @@
 
 
 </style>
-<div class="layout bg-background">
+<div class="layout bg-background h-full">
 
 	<div class="triangle"></div>
 
