@@ -43,8 +43,8 @@
 
 
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10">
-        <Button class="bg-text text-background hover:bg-accent" href="../">zurück</Button>
+        <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../">zurück</Button>
 
     </div>
-    <div class="h-screen"></div>
+    <div class="h-96"></div>
 </main>
