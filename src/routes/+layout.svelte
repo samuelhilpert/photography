@@ -16,7 +16,7 @@
 
 	}
 	.layout {
-		@apply flex bg-background h-screen;
+		@apply flex bg-background h-full;
 
 	}
 

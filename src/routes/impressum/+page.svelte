@@ -22,8 +22,9 @@ import { Button } from 'flowbite-svelte';
         </div>
     </div>
 
-    <div class="container h-full mx-auto flex justify-center items-center mt-4">
+    <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10">
         <Button class="bg-text text-background hover:bg-accent" href="../impre">zurück</Button>
 
     </div>
+    <div class="h-screen"></div>
 </main>

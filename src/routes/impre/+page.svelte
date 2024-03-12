@@ -2,6 +2,7 @@
     import impress from '$lib/img/impressum.png'
     import datenschutz from '$lib/img/datenschutz.png'
     import contact from '$lib/img/1034153.png'
+    import { Button } from 'flowbite-svelte';
 
 </script>
 
@@ -33,26 +34,17 @@
             <img src={contact} alt='banner' class="h-24 rounded-lg mx-auto"/>
             <p>Hi!</p>
             <p>Herzlich Willkommen auf dieser Webseite. Wir sind Svenja und Samuel und studieren aktuell im 4. Semester. Diese Webseite wurde für ein Projekt an der Dualen Hochschule Baden-Württemberg entworfen und erstellt. Es handelt sich um keine echtes Portfolio. Es kann kein wirklicher Fotograf angefragt werden.</p>
-
+            <p>Bei Anfrage, Fehlerreporting oder Supportanfragen melden sie sich bitte unter den bekannten Mail-Adressen. Leider kann eine Bearbeitungszeit unter 1 Woche nicht gewährleistet werden.</p>
         </div>
     </div>
 
 
 
 
-    <div>
-        <a href="/impressum" class="text-blue-600 hover:text-blue-800 underline"
-        >Impressum</a
-        >
+
+    <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10">
+        <Button class="bg-text text-background hover:bg-accent" href="../">zurück</Button>
+
     </div>
-    <div>
-        <a href="/datenschutz" class="text-blue-600 hover:text-blue-800 underline"
-        >Datenschutz</a
-        >
-    </div>
-    <div class="container h-full mx-auto flex justify-center items-center mt-4">
-        <h2>
-            <a href = "../" class="text-blue-600 hover:text-blue-800 underline">Click here to go back!</a>
-        </h2>
-    </div>
+    <div class="h-screen"></div>
 </main>
