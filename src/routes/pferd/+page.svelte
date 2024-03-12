@@ -5,7 +5,9 @@
             <h1>pferd!</h1>
             <p>Have fun Studying</p>
         </div>
-
+        <div>
+            <input class="w-full">
+        </div>
     </div>
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <h2>
