@@ -1,5 +1,5 @@
 <script>
-import contact from "$lib/img/1034153.png";
+
 import { Button } from 'flowbite-svelte';
 </script>
 <main class="content" style="position: relative">
