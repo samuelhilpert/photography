@@ -1,6 +1,8 @@
 <script>
 
     import {Button, Input, Textarea} from 'flowbite-svelte';
+    export let form;
+
 
 
     let textareaContent = "";
@@ -10,27 +12,46 @@
     let getmail1 = "";
     let getdate1 = "";
     let getanmerkungen = "";
+    let test = "";
+
+
+
     function inhaltarea2(event) {
         textareaContent1 = event.target.value;
+        updateTest();
     }
     function inhaltarea1(event) {
         textareaContent = event.target.value;
+        updateTest();
     }
     function getvornamen(event) {
         getvor = event.target.value;
+        updateTest();
     }
     function getnachnamen(event) {
         getnach = event.target.value;
+        updateTest();
     }
     function getmail(event) {
         getmail1 = event.target.value;
+        updateTest();
     }
     function getdate(event) {
         getdate1 = event.target.value;
+        updateTest();
     }
     function anmerkungen(event) {
         getanmerkungen = event.target.value;
+        updateTest();
     }
+    function updateTest() {
+        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten. Hier sind die Details: Der Kunde wünscht sich "${textareaContent1}". Er stellst dich vor, dass "${textareaContent}"
+         Kontakdaten: Email: ${getmail1} Datum: ${getdate1} Anmerkungen: ${getanmerkungen}`;
+    }
+
+
+
+
 </script>
 <main class="content" style="position: relative">
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
@@ -71,7 +92,7 @@
             </div>
             <div class="flex w-full  rounded-lg pl-3 pr-3">
                 <div class="flex flex-row gap-4 w-full mt-5 mb-5">
-                    <Textarea rows="4" id="beschreibung" placeholder="weitere Anmerkungen" on:input={anmerkungen}  />
+                    <Textarea rows="4" id="beschreibung" placeholder="weitere Anmerkungen"  on:input={anmerkungen}  />
                 </div>
             </div>
         </div>
@@ -86,7 +107,37 @@
 
 </div>
 
-    <div class="h-96"></div>>
+    <p class="text-accent">{test}</p>
+
+
+
+    <div class="wrapper">
+        <fieldset>
+            <legend class="invisible">Send Emails</legend>
+            <form method="POST" class="container">
+                <button class="text-accent" type="submit">Send</button>
+                <div>
+                    <div class="input invisible">
+                        <label for="">To:</label>
+                        <input name="to" type="email" value="samuelhilpert@web.de" />
+                    </div>
+                    <div class="input invisible">
+                        <label for="">Subject:</label>
+                        <input name="subject" type="text" value="Du hast eine neue Anfrage: Allgemeine Anfrage" />
+                    </div>
+                    <div class="input invisible">
+                        <label for="">Body:</label>
+
+                        <textarea name="body" rows="6" value="{test}" />
+
+                    </div>
+                </div>
+
+
+            </form>
+
+        </fieldset>
+    </div>
 
 
 </main>
