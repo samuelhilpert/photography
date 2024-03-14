@@ -43,20 +43,20 @@
     <div class="container flex flex-row justify-content: center gap-4 pl-32 pr-32 pt-4" style="width: 4000px">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
 
-            <p class=" ml-5 text-background mt-5">Was wünscht du dir ?</p>
+            <p class=" ml-5 text-background mt-5 text-xl">Was wünscht du dir ?</p>
             <div class="flex w-full  rounded-lg pl-3 pr-3">
                 <div class="flex flex-row gap-4 w-full mt-5 mb-5">
                     <Textarea rows="4" id="beschreibung" placeholder="Beschreibe hier kurz, was fotografiert werden soll" on:input={inhaltarea2} />
 
                 </div>
             </div>
-            <p class="text-background ml-5 mt-2">Was stellst du dir darunter vor ?</p>
+            <p class="text-background ml-5 mt-2 text-xl">Was stellst du dir darunter vor ?</p>
             <div class="flex w-full rounded-lg pl-3 pr-3">
                 <div class="flex flex-row gap-4 w-full mt-5 mb-5">
                     <Textarea rows="4" id="beschreibung" placeholder="Beschreibe hier kurz, wie die Fotos aussehen sollen" on:input={inhaltarea1}  />
                 </div>
             </div>
-            <p class="text-background ml-5 mt-2">Kontaktdaten</p>
+            <p class="text-background ml-5 mt-2 text-xl">Kontaktdaten</p>
             <div class="flex w-full  rounded-lg   pl-3 pr-3">
                 <div class="flex gap-4 w-full mt-5 mb-5">
                     <Input on:input={getvornamen} id="vorname" size="lg" placeholder="Vorname" class="w-full" />
@@ -85,5 +85,8 @@
          <Button class="bg-accent text-background hover:bg-text hover:text-background">Anfrage senden</Button>
 
 </div>
+
     <div class="h-96"></div>>
+
+
 </main>

@@ -28,5 +28,10 @@
 		"vite": "^5.0.3",
 		"vitest": "^1.2.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"nodemailer": "^6.9.12",
+		"svelte-email": "^0.0.4",
+		"svelte-mail": "^0.1.1"
+	}
 }

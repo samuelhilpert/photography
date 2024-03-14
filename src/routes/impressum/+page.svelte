@@ -1,36 +1,7 @@
 <script>
 
-    import {Button, Input, Textarea} from 'flowbite-svelte';
+    import {Button} from 'flowbite-svelte';
 
-
-    let textareaContent = "";
-    let getvor = "";
-    let getnach = "";
-    let textareaContent1 = "";
-    let getmail1 = "";
-    let getdate1 = "";
-    let getanmerkungen = "";
-    function inhaltarea2(event) {
-        textareaContent1 = event.target.value;
-    }
-    function inhaltarea1(event) {
-        textareaContent = event.target.value;
-    }
-    function getvornamen(event) {
-        getvor = event.target.value;
-    }
-    function getnachnamen(event) {
-        getnach = event.target.value;
-    }
-    function getmail(event) {
-        getmail1 = event.target.value;
-    }
-    function getdate(event) {
-        getdate1 = event.target.value;
-    }
-    function anmerkungen(event) {
-        getanmerkungen = event.target.value;
-    }
 </script>
 <main class="content" style="position: relative">
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
@@ -58,5 +29,5 @@
     <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../impre">zurück</Button>
 
 </div>
-    <div class="h-96"></div>>
+    <div class="h-96"></div>
 </main>

@@ -65,7 +65,7 @@
           >
       </div>
       <div>
-          <a href="/mensch" class="text-blue-600 hover:text-blue-800 underline"
+          <a href="/email" class="text-blue-600 hover:text-blue-800 underline"
           >mensch</a
           >
       </div>

@@ -5,8 +5,6 @@
     //let spanClass = 'text-text hover:text-secondary hover:bg-primary';
 
   </script>
-<style>
-</style>
 
   <Sidebar class="w-full h-screen bg-secondary text-text border-2 border-background rounded-md">
     <SidebarWrapper class="bg-secondary">
