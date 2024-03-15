@@ -192,6 +192,10 @@
                                 <p>Anzahl Bilder</p>
                                 <Input on:input={getBilder} type="number" class="w-full"/>
                             </div>
+                            <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
+                            <Label class="my-auto">Shooting-Tag</Label>
+                            <Input on:input={getdate} type="date" class="w-full"/>
+                            </div>
                         </div>
 
                     </AccordionItem>
@@ -201,8 +205,7 @@
                             <div class="flex gap-4 w-full mt-5 mb-5">
                                 <Input on:input={getvornamen} id="vorname" size="lg" placeholder="Vorname" class="w-full" />
                                 <Input on:input={getnachnamen} id="nachname" size="lg" placeholder="Nachname" class="w-full" />
-                                <Label class="my-auto">Shooting-Tag</Label>
-                                <Input on:input={getdate} type="date" class="w-full"/>
+
                             </div>
                         </div>
                         <div class="container mx-auto flex flex-row justify-content: center gap-4">
