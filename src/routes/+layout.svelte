@@ -7,11 +7,11 @@
 <style>
 	/* Stil für das Layout */
 	.triangle {
-		border-left: 30vw solid transparent;
-		border-right: 70vw solid transparent;
+		border-left: 28vmax solid transparent;
+		border-right: 70vmax solid transparent;
 		border-top: 45vw solid #2f2f38 ;
 		position: absolute;
-		top: 13%;
+		top: 14%;
 
 	}
 	.layout {
