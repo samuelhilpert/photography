@@ -19,8 +19,8 @@
       <NavLi class="cursor-pointer text-text">
         Portfolio<ChevronDownOutline class="w-3 h-3 ms-2  text-text dark:text-text inline" />
       </NavLi>
-      <MegaMenu class="-right-20 w-1/3 rounded-lg bg-background text-text"  items={menu} let:item>
-        <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">
+      <MegaMenu class="w-1/4 rounded-lg bg-background text-text"  items={menu} let:item>
+        <a href={item.href} class="hover:underline hover:text-accent-600 dark:hover:text-primary-500">
           {item.name}
         </a>
       </MegaMenu>

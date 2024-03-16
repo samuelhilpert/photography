@@ -20,7 +20,7 @@
 	}
 	
 	.footer {
-		@apply bottom-0;
+		@apply bottom-0 w-screen;
 	}
 	
 
@@ -34,6 +34,7 @@
 		<div class="top-0"><Menu/></div>
 
 		<slot></slot>
+
 		<div class="footer"><Footer /></div>
 
 	</div>
