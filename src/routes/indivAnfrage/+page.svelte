@@ -77,6 +77,11 @@
         }
     }
 
+    function handleClick() {
+        // Zweiter Button auslösen
+        document.getElementById('sendmail1').dispatchEvent(new Event('click'));
+    }
+
 </script>
 <main class="content" style="position: relative">
         <div class="container h-full mx-auto flex justify-center items-center mt-4">
@@ -183,17 +188,17 @@
                         <div class="container mx-auto flex flex-row justify-content: center gap-4">
 
                             <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
-                                <p>Anzahl Stunden</p>
+                                <Label class="my-auto">Anzahl Stunden</Label>
                                 <Input on:input={getStunden} type="number" class="w-full"/>
                             </div>
 
 
                             <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
-                                <p>Anzahl Bilder</p>
+                                <Label class="my-auto">Anzahl Bilder</Label>
                                 <Input on:input={getBilder} type="number" class="w-full"/>
                             </div>
                             <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
-                            <Label class="my-auto">Shooting-Tag</Label>
+                            <Label class="my-auto">Shooting Tag</Label>
                             <Input on:input={getdate} type="date" class="w-full"/>
                             </div>
                         </div>
@@ -224,6 +229,12 @@
 
 
         </div>
+
+    <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-4">
+        <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück</Button>
+        <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={handleClick}>Anfrage senden</Button>
+    </div>
+    <!--
     <p class="text-accent">{selectedCategory}</p>
     <p class="text-accent">{selectedtier}</p>
     <p class="text-accent">{getvor}</p>
@@ -233,16 +244,12 @@
     <p class="text-accent">{getstunden}</p>
     <p class="text-accent">{getbild}</p>
     <p class="success text-accent">{form?.success || ""}</p>
-    <div class="container h-full mx-auto flex justify-center items-center mt-4">
-        <h2>
-            <a href = "../" class="text-blue-600 hover:text-blue-800 underline">Click here to go back!</a>
-        </h2>
-    </div>
+    -->
     <div class="wrapper">
         <fieldset>
             <legend class="invisible">Send Emails</legend>
             <form method="POST" class="container">
-                <button class="text-accent" type="submit">Send</button>
+                <button id="sendmail1" class="text-accent invisible" type="submit">Send</button>
                 <div>
                     <div class="input invisible">
                         <label for="">To:</label>
@@ -263,4 +270,5 @@
 
         </fieldset>
         </div>
+
 </main>

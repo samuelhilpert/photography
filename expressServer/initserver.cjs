@@ -2,12 +2,13 @@
 
 const express = require('express');
 const knex = require('knex');
-//onst cors = require('cors'); // Importiere das cors-Modul
+const cors = require('cors'); // Importiere das cors-Modul
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-// Aktiviere CORS für alle Anfragen
-//app.use(cors());
+// Aktiviere CORS für alle Anfra
+// gen
+app.use(cors());
 
 // Konfiguration für die MySQL-Datenbank
 const db = knex({
@@ -32,6 +33,14 @@ app.get('/testneu', async (req, res) => {
     res.json(tags);
 })
 
+app.post('/InsertAllgemeineAnfragen', async(req,res) => {
+    const { vorname, nachname, tag, wuensche, vorstellungen, mail, anmerkungen } = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
+    console.log(req.body);
+    console.log(vorname, nachname);
+    // try {
+    const card = await db.insert({vorname: vorname, nachname: nachname, tag: tag, wuensche: wuensche, vorstellungen: vorstellungen, mail: mail, anmerkungen: anmerkungen}).into('allganfragen');
+
+})
 
 //Muss am Schluss sein, da vor dem Starten erstmal alles definiert werden muss
 app.listen(PORT, () => {
