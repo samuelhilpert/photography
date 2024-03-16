@@ -42,6 +42,14 @@ app.post('/InsertAllgemeineAnfragen', async(req,res) => {
 
 })
 
+app.post('/InsertIndividuelleAnfragen', async(req,res) => {
+    const { vorname, nachname, email, motiv, vorstellung, stunden, bilder, tag} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
+    console.log(req.body);
+    // try {
+    const card = await db.insert({vorname: vorname, nachname: nachname, email:email, motiv:motiv, vorstellung:vorstellung, stunden:stunden, bilder:bilder, tag: tag}).into('indivanfragen');
+
+})
+
 //Muss am Schluss sein, da vor dem Starten erstmal alles definiert werden muss
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

@@ -9,7 +9,7 @@
 
     export let form;
     let test ="";
-    import {Input, Textarea, AccordionItem, Accordion, Label, Checkbox, Radio, Button} from "flowbite-svelte";
+    import {Input, AccordionItem, Accordion, Label, Checkbox, Radio, Button} from "flowbite-svelte";
 
     let getvor = "";
     let getnach = "";
@@ -76,12 +76,41 @@
 
         }
     }
+    async function sendData1() {
 
-    function handleClick() {
-        // Zweiter Button auslösen
-        document.getElementById('sendmail1').dispatchEvent(new Event('click'));
+
+        const API_URL = "http://localhost:3001/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
+
+        const response = await fetch(API_URL, {
+            method: "POST",
+
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                vorname: getvor,
+                nachname: getnach,
+                email: getmail1,
+                motiv: selectedCategory,
+                vorstellung: selectedtier,
+                stunden: getstunden,
+                bilder: getbild,
+                tag: getdate1,
+
+            }),
+
+        });
+
+
     }
 
+    function handleClick() {
+        sendData1();
+        setTimeout(moin, 1000);
+
+    }
+
+    function moin() {
+        document.getElementById('sendmail1').dispatchEvent(new Event('click'));
+    }
 </script>
 <main class="content" style="position: relative">
         <div class="container h-full mx-auto flex justify-center items-center mt-4">
