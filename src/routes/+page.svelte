@@ -1,17 +1,23 @@
 <script>
 	let name = 'Svenja';
 	import { Gallery, Carousel } from 'flowbite-svelte';
+
+    /**Import der Bilder*/
 	import bannerIdee from '$lib/img/BannerIdee.png';
-	import auto from '$lib/img/auto.jpg';
+	import imgauto from '$lib/img/auto.jpg';
 	import hund from '$lib/img/hund.jpg';
 	import mensch from '$lib/img/mensch.jpg';
 	import pferd from '$lib/img/pferd.png';
 
 	const imgPferd = [{ alt: 'Pferd', src: pferd }];
-	const imgAuto = [{ alt: 'Auto', src: auto }];
+	const imgAuto = [{ alt: 'Auto', src: imgauto }];
 	const imgMensch = [{ alt: 'Mensch', src: mensch }];
 	const imgHund = [{ alt: 'Hund', src: hund }];
 	const images1 = [{ alt: 'Banner', src: bannerIdee }];
+
+    /**functions für dynamisches erscheinen der Titel
+     * --TODO: hover über schrift s/w
+    */
 
     function handleAutoClick() {
         window.location.assign('/autoPortfolio');
@@ -64,6 +70,7 @@
 
 <style>
     /**Platzierung des Banners*/
+    /** Platzierung des Banners*/
 	.banner {
 		@apply justify-center rounded-lg;
 		margin-top: 2%;
