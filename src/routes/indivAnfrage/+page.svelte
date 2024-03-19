@@ -111,6 +111,28 @@
     function moin() {
         document.getElementById('sendmail1').dispatchEvent(new Event('click'));
     }
+
+    async function calculatePrice() {
+
+
+        const API_URL = "http://localhost:3001/calculatePrice";
+
+        const response = await fetch(API_URL, {
+            method: "POST",
+
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                category: selectedCategory,
+                motiv: selectedtier,
+                stunden: getstunden,
+                bilder: getbild,
+
+            }),
+
+        });
+
+
+    }
 </script>
 <main class="content" style="position: relative">
         <div class="container h-full mx-auto flex justify-center items-center mt-4">
@@ -262,6 +284,7 @@
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-4">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück</Button>
         <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={handleClick}>Anfrage senden</Button>
+        <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={calculatePrice}>Preis berechnen</Button>
     </div>
     <!--
     <p class="text-accent">{selectedCategory}</p>

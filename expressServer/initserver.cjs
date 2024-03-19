@@ -50,6 +50,21 @@ app.post('/InsertIndividuelleAnfragen', async(req,res) => {
 
 })
 
+app.post('/calculatePrice', async(req,res) => {
+    const {category,motiv,stunden, bilder} = req.body;
+    console.log(req.body);
+    if (category === "Tier" && motiv.includes("in Bewegung")) {
+        const price = 500 + (stunden * 100) + (bilder * 5);
+        console.log(price);
+        res.json(price);
+    } else if (category === "Tier" && motiv.includes("Portrait")) {
+        const price = 300 + (stunden * 100) + (bilder * 5);
+        console.log(price);
+        res.json(price);
+
+    }
+})
+
 //Muss am Schluss sein, da vor dem Starten erstmal alles definiert werden muss
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
