@@ -53,16 +53,48 @@ app.post('/InsertIndividuelleAnfragen', async(req,res) => {
 app.post('/calculatePrice', async(req,res) => {
     const {category,motiv,stunden, bilder} = req.body;
     console.log(req.body);
-    if (category === "Tier" && motiv.includes("in Bewegung")) {
-        const price = 500 + (stunden * 100) + (bilder * 5);
-        console.log(price);
-        res.json(price);
-    } else if (category === "Tier" && motiv.includes("Portrait")) {
-        const price = 300 + (stunden * 100) + (bilder * 5);
-        console.log(price);
-        res.json(price);
 
+    if (category === "Tier" ) {
+        const anfragen = motiv.length;
+        console.log(anfragen);
+        if (anfragen === 1) {
+            motivpreis = 0;
+        } else if (anfragen === 2) {
+            motivpreis = 40;
+        } else if (anfragen === 3) {
+            motivpreis = 60;
+        }
+        const price = 500 + motivpreis + (stunden * 100) + (bilder * 5);
+        console.log(price);
+        res.json(price);
+    } else if (category === "Auto"){
+        const anfragen = motiv.length;
+        console.log(anfragen);
+        if (anfragen === 1) {
+            motivpreis = 0;
+        } else if (anfragen === 2) {
+            motivpreis = 40;
+        } else if (anfragen === 3) {
+            motivpreis = 60;
+        }
+        const price = 250 + motivpreis + (stunden * 100) + (bilder * 5);
+        console.log(price);
+        res.json(price);
+    } else if (category === "Mensch") {
+        const anfragen = motiv.length;
+        console.log(anfragen);
+        if (anfragen === 1) {
+            motivpreis = 0;
+        } else if (anfragen === 2) {
+            motivpreis = 40;
+        } else if (anfragen === 3) {
+            motivpreis = 60;
+        }
+        const price = 100 + motivpreis + (stunden * 100) + (bilder * 5);
+        console.log(price);
+        res.json(price);
     }
+
 })
 
 //Muss am Schluss sein, da vor dem Starten erstmal alles definiert werden muss

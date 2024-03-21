@@ -6,9 +6,15 @@
     import pferdbewegung from "$lib/img/IMG_1462.png";
     import hundportrait from "$lib/img/img_2.png";
     import pferdmensch from "$lib/img/IMG_5141-Edit.jpg";
+    import carinmovement from "$lib/img/carinmove.jpeg";
+    import porsche from "$lib/img/porsche.jpeg";
+    import theke from "$lib/img/theke.jpeg";
+    import natur from "$lib/img/natur.jpeg";
+    import streetstyle from "$lib/img/streetstyle.jpeg";
 
     export let form;
     let test ="";
+    let pricecalculate = "";
     import {Input, AccordionItem, Accordion, Label, Checkbox, Radio, Button} from "flowbite-svelte";
 
     let getvor = "";
@@ -74,7 +80,9 @@
 
                 break;
 
+
         }
+
     }
     async function sendData1() {
 
@@ -129,16 +137,23 @@
 
             }),
 
+
         });
+        pricecalculate = await response.json();
+        console.log(pricecalculate);
 
 
     }
+
+
 </script>
 <main class="content" style="position: relative">
         <div class="container h-full mx-auto flex justify-center items-center mt-4">
             <div class="space-y-5">
                 <h1> <span class="text-5xl text-text">Deine individuelle</span> <span class="text-5xl text-background"> Anfrage</span></h1>
+
             </div>
+
 
         </div>
 
@@ -162,7 +177,7 @@
                             </div>
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
                                 <img src={mensch} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Radio color="red" name="category" class="flex justify-center text-lg" bind:group={selectedCategory}  value="Mensch">Mensch</Radio>
+                                <Radio color="red" name="category" class="flex justify-center text-lg" bind:group={selectedCategory}  on:change={handleRadioChange} value="Mensch">Mensch</Radio>
                             </div>
                         </div>
                     </AccordionItem>
@@ -197,19 +212,19 @@
                         <div class="container mx-auto flex flex-row justify-content: center gap-4">
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={auto} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <img src={porsche} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}  value="Portrait">Portrait</Checkbox>
+
+                            </div>
+
+                            <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
+                                <img src={carinmovement} alt='banner' class="h-40 rounded-lg mx-auto"/>
                                 <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}  value="inBewegung">in Bewegung</Checkbox>
 
                             </div>
-
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={auto} alt='banner' class="h-40 rounded-lg mx-auto"/>
-
-
-                            </div>
-                            <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={auto} alt='banner' class="h-40 rounded-lg mx-auto"/>
-
+                                <img src={theke} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}  value="Detail">Detailaufnahme</Checkbox>
                             </div>
                         </div>
                         {/if}
@@ -217,19 +232,16 @@
                         <div class="container mx-auto flex flex-row justify-content: center gap-4">
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={mensch} alt='banner' class="h-40 rounded-lg mx-auto"/>
-
+                                <img src={natur} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}  value="outdoor">Outdoor</Checkbox>
                             </div>
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={mensch} alt='banner' class="h-40 rounded-lg mx-auto"/>
-
-
-                            </div>
-                            <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={mensch} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <img src={streetstyle} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}  value="streetstyle">Street Style</Checkbox>
 
                             </div>
+
                         </div>
                         {/if}
 
@@ -275,7 +287,7 @@
 
 
 
-
+                <div class="text-accent text-center font-bold text-xl mb-1 mt-1"> Dein individuelles Angebot: {pricecalculate} €</div>
             </div>
 
 
