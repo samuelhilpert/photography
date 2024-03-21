@@ -1,12 +1,11 @@
-// Abstrakte Fabrik
+
 class ShootingCreator {
     constructor() {}
 
-    // Abstrakte Methode zur Erstellung eines Fahrzeugs
     erstellen() {}
 }
 
-// Konkrete Fabrik für Autos
+
 class Tiershooting extends ShootingCreator {
     constructor() {
         super();
@@ -17,7 +16,7 @@ class Tiershooting extends ShootingCreator {
     }
 }
 
-// Konkrete Fabrik für Fahrräder
+
 class Menschshooting extends ShootingCreator {
     constructor() {
         super();
@@ -37,12 +36,12 @@ class Autoshooting extends ShootingCreator {
     }
 }
 
-// Basisklasse für Fahrzeuge
+
 class Shooting {
     constructor() {}
 }
 
-// Konkrete Klasse für Autos
+
 class TierShoot extends Shooting {
     constructor() {
         super();
@@ -53,7 +52,7 @@ class TierShoot extends Shooting {
     }
 }
 
-// Konkrete Klasse für Fahrräder
+
 class MenschShoot extends Shooting {
     constructor() {
         super();
