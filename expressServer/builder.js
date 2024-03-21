@@ -1,4 +1,4 @@
-// Product
+
 class Shooting {
     constructor() {
         this.kategorie = "";
@@ -12,7 +12,7 @@ class Shooting {
     }
 }
 
-// Builder Interface
+
 class ShootingCreator {
     constructor() {
         this.shooting = new Shooting();
@@ -31,7 +31,7 @@ class ShootingCreator {
     }
 }
 
-// Concrete Builder
+
 class KundeAShootingCreator extends ShootingCreator {
     selectKategorie() {
         this.shooting.kategorie = "Tier";
@@ -64,7 +64,7 @@ class ShootingDirector {
     }
 }
 
-// Client Code
+
 const KundeA = new KundeAShootingCreator();
 const director = new ShootingDirector(KundeA);
 

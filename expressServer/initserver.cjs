@@ -6,8 +6,8 @@ const cors = require('cors'); // Importiere das cors-Modul
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-// Aktiviere CORS für alle Anfra
-// gen
+// Aktiviere CORS für alle Anfragen
+
 app.use(cors());
 
 // Konfiguration für die MySQL-Datenbank
