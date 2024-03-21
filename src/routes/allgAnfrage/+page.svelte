@@ -49,6 +49,40 @@
          Kontakdaten: Email: ${getmail1} Datum: ${getdate1} Anmerkungen: ${getanmerkungen}`;
     }
 
+    function handleClick1() {
+        sendData();
+        setTimeout(moin, 1000);
+
+    }
+
+    function moin() {
+        document.getElementById('sendmail2').dispatchEvent(new Event('click'));
+    }
+
+    async function sendData() {
+
+
+        const API_URL = "http://localhost:3001/InsertAllgemeineAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
+
+        const response = await fetch(API_URL, {
+            method: "POST",
+
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                vorname: getvor,
+                nachname: getnach,
+                tag: getdate1,
+                wuensche:textareaContent1,
+                vorstellungen:textareaContent,
+                mail:getmail1,
+                anmerkungen:getanmerkungen,
+            }),
+
+        });
+
+
+    }
+
 
 
 
@@ -56,10 +90,11 @@
 <main class="content" style="position: relative">
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
-            <h1 class="text-5xl text-text">Allgemeine Anfrage</h1>
+            <h1> <span class="text-5xl text-text">Deine allgemeine</span> <span class="text-5xl text-background"> Anfrage</span></h1>
         </div>
 
     </div>
+
 
     <div class="container flex flex-row justify-content: center gap-4 pl-32 pr-32 pt-4" style="width: 4000px">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
@@ -98,16 +133,17 @@
         </div>
 
     </div>
+    <!--
     <p class="text-text">{textareaContent1}{textareaContent}{getvor}{getnach} {getmail1} {getdate1}{getanmerkungen}</p>
-
-
+-->
      <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-5">
     <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück</Button>
-         <Button class="bg-accent text-background hover:bg-text hover:text-background">Anfrage senden</Button>
+         <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={handleClick1}>Anfrage senden</Button>
 
 </div>
-
+    <!---
     <p class="text-accent">{test}</p>
+    -->
 
 
 
@@ -115,7 +151,7 @@
         <fieldset>
             <legend class="invisible">Send Emails</legend>
             <form method="POST" class="container">
-                <button class="text-accent" type="submit">Send</button>
+                <button id="sendmail2" class="text-accent invisible" type="submit">Send</button>
                 <div>
                     <div class="input invisible">
                         <label for="">To:</label>
