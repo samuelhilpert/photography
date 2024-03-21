@@ -150,14 +150,14 @@
 <main class="content" style="position: relative">
         <div class="container h-full mx-auto flex justify-center items-center mt-4">
             <div class="space-y-5">
-                <h1> <span class="text-5xl text-text">Deine individuelle</span> <span class="text-5xl text-background"> Anfrage</span></h1>
+                <h1> <span class="text-5xl text-text">Deine individuelle</span> <span class="text-5xl text-accent"> Anfrage</span></h1>
 
             </div>
 
 
         </div>
 
-        <div class="container flex flex-row justify-content: center gap-4 pl-32 pr-32 pt-4" style="width: 4000px">
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
             <div class="flex-1 border rounded-lg shadow-md bg-text ">
                 <Accordion>
                     <AccordionItem open>
@@ -287,7 +287,7 @@
 
 
 
-                <div class="text-accent text-center font-bold text-xl mb-1 mt-1"> Dein individuelles Angebot: {pricecalculate} €</div>
+                <div class="text-background text-center font-bold text-xl mb-1 mt-1"> Dein individuelles Angebot: {pricecalculate} €</div>
             </div>
 
 

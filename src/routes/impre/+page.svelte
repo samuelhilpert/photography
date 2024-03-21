@@ -13,7 +13,7 @@
         </div>
 
     </div>
-    <div class="container mx-auto flex flex-row justify-content: center gap-4 pl-52 pr-52">
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img src={impress} alt='banner' class="h-24 rounded-lg mx-auto"/>
             <a href="/impressum">Impressum</a>
@@ -29,7 +29,7 @@
         </div>
 
     </div>
-    <div class="container mx-auto flex flex-row justify-content: center gap-4 pl-52 pr-52 pt-4">
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img src={contact} alt='banner' class="h-24 rounded-lg mx-auto"/>
             <p>Hi!</p>

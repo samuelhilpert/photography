@@ -11,7 +11,7 @@
 
     </div>
 
-    <div class="container flex flex-row justify-content: center gap-4 pl-32 pr-32 pt-4" style="width: 4000px">
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
             <h1 class="text-lg text-center mt-5">Impressum</h1><br>
                 <p class="ml-5">Samuel Hilpert </p><p class="ml-5">Coblitzallee 1-9 68163 Mannheim</p><br>

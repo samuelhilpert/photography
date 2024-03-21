@@ -14,7 +14,7 @@ import {CameraFotoSolid} from "flowbite-svelte-icons";
         </div>
 
     </div>
-    <div class="container mx-auto flex flex-row justify-content: center gap-4 pl-52 pr-52 mt-5">
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <CameraFotoSolid class="w-20 h-20 mx-auto shadow rounded-2xl shadow-background" />
             <h1 class="text-3xl mt-2">Allgemeine Anfrage</h1>

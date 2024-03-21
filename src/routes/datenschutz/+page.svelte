@@ -11,10 +11,10 @@
 
     </div>
 
-    <div class="container flex flex-row justify-content: center gap-4 pl-32 pr-32 pt-4" style="width: 4000px">
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
-            <h1 class="text-lg text-center mt-5">Datenschutz</h1><br>
-            <div class="ml-5">
+
+            <div class="ml-5 mr-5 mt-10">
                 <h1 class="text-lg font-bold">1. Datenschutz auf einen Blick</h1> <h2 class="font-bold">Allgemeine Hinweise</h2>
                 <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
                 <br><h2 class="font-bold">Datenerfassung auf dieser Website</h2>
