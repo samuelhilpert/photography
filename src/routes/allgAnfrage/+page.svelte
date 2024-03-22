@@ -1,6 +1,10 @@
 <script>
 
     import {Button, Input, Textarea} from 'flowbite-svelte';
+    import { Alert } from 'flowbite-svelte';
+    import { InfoCircleSolid } from 'flowbite-svelte-icons';
+    import { fly } from 'svelte/transition';
+
     export let form;
 
 
@@ -86,12 +90,27 @@
 
 
 
+
+
 </script>
 <main class="content" style="position: relative">
+
+    {#if form?.success}
+    <Alert color="dark" dismissable>
+        <InfoCircleSolid slot="icon" class="w-4 h-4" />
+        Deine Anfrage wurde erfolgreich übermittelt. Ich werde mich in Kürze bei dir melden.
+        <Button color="dark" slot="close-button" size="xs" let:close on:click={close} class="ms-auto">Schließen</Button>
+        </Alert>
+    {/if}
+
+
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
             <h1> <span class="text-5xl text-text">Deine allgemeine</span> <span class="text-5xl text-accent"> Anfrage</span></h1>
         </div>
+
+
+
 
     </div>
 
@@ -144,6 +163,8 @@
     <!---
     <p class="text-accent">{test}</p>
     -->
+
+
 
 
 

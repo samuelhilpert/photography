@@ -15,7 +15,9 @@
     export let form;
     let test ="";
     let pricecalculate = "";
-    import {Input, AccordionItem, Accordion, Label, Checkbox, Radio, Button} from "flowbite-svelte";
+    import {Input, AccordionItem, Accordion, Label, Checkbox, Radio, Button, Alert} from "flowbite-svelte";
+    import {InfoCircleSolid} from "flowbite-svelte-icons";
+
 
     let getvor = "";
     let getnach = "";
@@ -97,11 +99,12 @@
                 vorname: getvor,
                 nachname: getnach,
                 email: getmail1,
-                motiv: selectedCategory,
-                vorstellung: selectedtier,
+                kategorie: selectedCategory,
+                motiv: selectedtier,
                 stunden: getstunden,
                 bilder: getbild,
                 tag: getdate1,
+                kosten: pricecalculate,
 
             }),
 
@@ -148,7 +151,14 @@
 
 </script>
 <main class="content" style="position: relative">
-        <div class="container h-full mx-auto flex justify-center items-center mt-4">
+    {#if form?.success}
+        <Alert color="dark" dismissable>
+            <InfoCircleSolid slot="icon" class="w-4 h-4" />
+            Deine Anfrage wurde erfolgreich übermittelt. Ich werde mich in Kürze bei dir melden.
+            <Button color="dark" slot="close-button" size="xs" let:close on:click={close} class="ms-auto">Schließen</Button>
+        </Alert>
+    {/if}
+    <div class="container h-full mx-auto flex justify-center items-center mt-4">
             <div class="space-y-5">
                 <h1> <span class="text-5xl text-text">Deine individuelle</span> <span class="text-5xl text-accent"> Anfrage</span></h1>
 

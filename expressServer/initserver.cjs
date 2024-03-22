@@ -14,11 +14,11 @@ app.use(cors());
 const db = knex({
     client: 'mysql2',
     connection: {
-        host: 'photographydatabase.mysql.database.azure.com',
+        host: 'photograph.mysql.database.azure.com',
         port: 3306,
         user: 'samuel',
-        password: 'Mannheim03',
-        database: 'photography',
+        password: 'Fotograf03',
+        database: 'anfragen',
     },
 });
 
@@ -29,7 +29,7 @@ app.get('/test', (req, res) => {
 })
 
 app.get('/testneu', async (req, res) => {
-    const tags = await db.select('*').from('allganfragen');
+    const tags = await db.select('*').from('allgemein');
     res.json(tags);
 })
 
@@ -38,15 +38,15 @@ app.post('/InsertAllgemeineAnfragen', async(req,res) => {
     console.log(req.body);
     console.log(vorname, nachname);
     // try {
-    const card = await db.insert({vorname: vorname, nachname: nachname, tag: tag, wuensche: wuensche, vorstellungen: vorstellungen, mail: mail, anmerkungen: anmerkungen}).into('allganfragen');
+    const card = await db.insert({vorname: vorname, nachname: nachname, tag: tag, wuensche: wuensche, vorstellungen: vorstellungen, mail: mail, anmerkungen: anmerkungen}).into('allgemein');
 
 })
 
 app.post('/InsertIndividuelleAnfragen', async(req,res) => {
-    const { vorname, nachname, email, motiv, vorstellung, stunden, bilder, tag} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
+    const { vorname, nachname, email, kategorie, motiv, stunden, bilder, tag, kosten} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
     console.log(req.body);
     // try {
-    const card = await db.insert({vorname: vorname, nachname: nachname, email:email, motiv:motiv, vorstellung:vorstellung, stunden:stunden, bilder:bilder, tag: tag}).into('indivanfragen');
+    const card = await db.insert({vorname: vorname, nachname: nachname, email:email, kategorie: kategorie, motiv:motiv, stunden:stunden, bilder:bilder, tag: tag, kosten:kosten}).into('individuell');
 
 })
 
