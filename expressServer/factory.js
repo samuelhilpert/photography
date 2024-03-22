@@ -1,88 +1,139 @@
 
-class ShootingCreator {
+class AnfrageDetails {
+    constructor() {
+        this.kategorie = "";
+    }
+
+    isIndividuell() {}
+    getDetails() {}
+}
+
+
+class TierAnfrageDetails extends AnfrageDetails {
+    constructor() {
+        super();
+        this.kategorie = "Tier";
+    }
+
+    isIndividuell() {
+        return true;
+    }
+
+    getDetails() {
+        return {
+            art: "Tier",
+            motiv: "in Bewegung",
+
+        };
+    }
+}
+
+
+class MenschAnfrageDetails extends AnfrageDetails {
+    constructor() {
+        super();
+        this.kategorie = "Mensch";
+    }
+
+    isIndividuell() {
+
+        return true;
+    }
+
+    getDetails() {
+        return {
+            art: "Mensch",
+            motiv: "Porträt",
+
+        };
+    }
+}
+
+class AutoAnfrageDetails extends AnfrageDetails {
+    constructor() {
+        super();
+        this.kategorie = "Auto";
+    }
+
+    isIndividuell() {
+        return true;
+    }
+
+    getDetails() {
+        return {
+            art: "Auto",
+            motiv: "in Bewegung"
+
+        };
+    }
+}
+
+class AnfrageErsteller {
     constructor() {}
 
     erstellen() {}
 }
 
+class AllgAnfrageDetails extends AnfrageDetails {
+    constructor() {
+        super();
+        this.kategorie = "Allgemein";
+    }
 
-class Tiershooting extends ShootingCreator {
+    isIndividuell() {
+        return false;
+    }
+
+    getDetails() {
+        return {
+            art: "Allgemeine Anfrage",
+            wuensche: "Keine speziellen Wünsche",
+
+        };
+    }
+}
+
+
+class IndividuelleAnfrageFabrik extends AnfrageErsteller {
+    constructor(isTier) {
+        super();
+        this.isTier = isTier;
+    }
+
+    erstellen() {
+        if (this.isTier) {
+            return new TierAnfrageDetails();
+        } else if (this.isMensch) {
+            return new MenschAnfrageDetails();
+        } else {
+            return new AutoAnfrageDetails();
+
+        }
+    }
+}
+
+
+class AllgemeineAnfrageFabrik extends AnfrageErsteller {
     constructor() {
         super();
     }
 
     erstellen() {
-        return new TierShoot();
+        return new AllgAnfrageDetails();
     }
 }
 
 
-class Menschshooting extends ShootingCreator {
-    constructor() {
-        super();
-    }
+const anfrageFabrik = new IndividuelleAnfrageFabrik(true);
+const tierAnfrage = anfrageFabrik.erstellen();
 
-    erstellen() {
-        return new MenschShoot();
-    }
-}
-class Autoshooting extends ShootingCreator {
-    constructor() {
-        super();
-    }
+console.log(tierAnfrage.isIndividuell());
+console.log(tierAnfrage.kategorie);
+console.log(tierAnfrage.getDetails());
 
-    erstellen() {
-        return new AutoShoot();
-    }
-}
+const anfrageFabrik2 = new AllgemeineAnfrageFabrik();
+const autoAnfrage = anfrageFabrik2.erstellen();
 
-
-class Shooting {
-    constructor() {}
-}
-
-
-class TierShoot extends Shooting {
-    constructor() {
-        super();
-    }
-
-    shooten() {
-        console.log("Das Tier wird geshootet");
-    }
-}
-
-
-class MenschShoot extends Shooting {
-    constructor() {
-        super();
-    }
-
-    shooten() {
-        console.log("Der Mensch wird geshootet!");
-    }
-}
-
-class AutoShoot extends Shooting {
-    constructor() {
-        super();
-    }
-
-    shooten() {
-        console.log("Das Auto wird geshootet!");
-    }
-}
-
-
-const fabrik = new Tiershooting();
-const tier = fabrik.erstellen();
-tier.shooten();
-
-
-const fabrik2 = new Menschshooting();
-const mensch = fabrik2.erstellen();
-mensch.shooten();
-
-const fabrik3 = new Autoshooting();
-const auto = fabrik3.erstellen();
-auto.shooten();
+console.log(autoAnfrage.isIndividuell());
+console.log(autoAnfrage.kategorie);
+console.log(autoAnfrage.getDetails());
