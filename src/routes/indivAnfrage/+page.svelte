@@ -100,7 +100,7 @@
                 nachname: getnach,
                 email: getmail1,
                 kategorie: selectedCategory,
-                motiv: selectedtier,
+                motiv: implodeArray(selectedtier),
                 stunden: getstunden,
                 bilder: getbild,
                 tag: getdate1,
@@ -146,6 +146,17 @@
         console.log(pricecalculate);
 
 
+    }
+
+    function implodeArray(array) {
+        let result = '';
+        for (let i = 0; i < array.length; i++) {
+            result += array[i];
+            if (i !== array.length - 1) {
+                result += ' '; // Füge ein Leerzeichen zwischen den Elementen hinzu, außer beim letzten Element
+            }
+        }
+        return result;
     }
 
 
