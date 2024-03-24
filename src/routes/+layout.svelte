@@ -7,27 +7,18 @@
 <style>
 	/* Stil für das Layout */
 	.triangle {
-		border-left: 28vmax solid transparent;
+		border-left: 25vmax solid transparent;
 		border-right: 70vmax solid transparent;
 		border-top: 45vw solid #2f2f38 ;
 		position: absolute;
 		top: 14%;
 
 	}
-	.layout {
-		@apply flex bg-background h-full;
-
-	}
 	
-	.footer {
-		@apply bottom-0 w-screen;
-	}
-	
-
 
 
 </style>
-<div class="layout">
+<div class="flex bg-background h-full overflow-clip">
 
 	<div class="triangle"></div>
 	<div class="content bg-background">
@@ -35,7 +26,7 @@
 
 		<slot></slot>
 
-		<div class="footer"><Footer /></div>
+		<div class=" bottom-0 w-screen"><Footer /></div>
 
 	</div>
 

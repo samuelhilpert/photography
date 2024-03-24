@@ -1,10 +1,12 @@
 <script>
     import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte';
+    import logo from '$lib/img/Logo.jpg';
+    
   </script>
   
-  <Footer footerType="logo" class="bg-secondary">
+  <Footer footerType="logo" class="bg-secondary w-full overflow-hidden">
     <div class="h-1/7 sm:flex sm:items-center sm:justify-between">
-      <FooterBrand href="/+page" src="" alt="logo" name="logo" />
+      <FooterBrand href="/+page" src={logo} alt="logo"/>
       <FooterLinkGroup ulClass="flex flex-wrap items-center mb-6 text-sm text-test sm:mb-0 dark:text-text">
         <FooterLink href="/">Portfolio</FooterLink>
         <FooterLink href="/">Datenschutz/Impressum</FooterLink>

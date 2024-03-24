@@ -66,30 +66,16 @@ const imagesAuto2 = [
       }
     /**Header Text mit Card stylen*/
     .card {
- width: 600px;
- height: 200px;
- background-color: #212121;
- box-shadow: 15px 15px 30px #191919,
-              -15px -15px 30px #292929;
- transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
-              transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-}
-
-.card:hover {
- border-bottom-right-radius: 50px;
- border-top-left-radius: 50px;
- transform: scale(1.05);
-}
-
-    
+        margin-left: 25%;
+      }
   </style>
   
 <main class="content" style="position: relative">
 
 
-
-  <div class="card"></div>
-
+  <div class="card absolute top-20 bg-opacity-50 items-center w-1/2  rounded-full bg-secondary shadow-2xl">
+    <p class="text-5xl mt-5 text-center font-semibold text-accent"> Autofotografie</p> <br>
+</div>
 <!-- Einfügen / Abbilden der Bilder-->
   <Gallery class="gap-4 grid-cols-2 md:grid-cols-4">
     <Gallery items={imagesAuto} />
