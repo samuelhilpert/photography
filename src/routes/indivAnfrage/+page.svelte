@@ -30,26 +30,32 @@
     function getvornamen(event) {
         getvor = event.target.value;
         updateTest();
+        checkall();
     }
     function getnachnamen(event) {
         getnach = event.target.value;
         updateTest();
+        checkall();
     }
     function getmail(event) {
         getmail1 = event.target.value;
         updateTest();
+        checkall();
     }
     function getdate(event) {
         getdate1 = event.target.value;
         updateTest();
+        checkall();
     }
     function getBilder(event) {
         getbild = event.target.value;
         updateTest();
+        checkall();
     }
     function getStunden(event) {
         getstunden = event.target.value;
         updateTest();
+        checkall();
     }
     function updateTest() {
         test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten. Hier sind die Details: Der Kunde wünscht sich ein Shooting mit einem ${selectedCategory}. Die gewünschte Bildart ist ${selectedtier}. Der Kunde wünscht sich ${getbild} Bilder und will ${getstunden} Stunden shooten. Der Kunde kann am ${getdate1} das Shooting durchführen und seine Mail-Adresse lautet ${getmail1}.`;
@@ -89,31 +95,35 @@
     async function sendData1() {
 
 
-        const API_URL = "http://localhost:3001/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
+            const API_URL = "http://localhost:3001/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
 
-        const response = await fetch(API_URL, {
-            method: "POST",
+            const response = await fetch(API_URL, {
+                method: "POST",
 
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                vorname: getvor,
-                nachname: getnach,
-                email: getmail1,
-                kategorie: selectedCategory,
-                motiv: implodeArray(selectedtier),
-                stunden: getstunden,
-                bilder: getbild,
-                tag: getdate1,
-                kosten: pricecalculate,
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    vorname: getvor,
+                    nachname: getnach,
+                    email: getmail1,
+                    kategorie: selectedCategory,
+                    motiv: implodeArray(selectedtier),
+                    stunden: getstunden,
+                    bilder: getbild,
+                    tag: getdate1,
+                    kosten: pricecalculate,
 
-            }),
+                }),
 
-        });
+            });
+
+
+
 
 
     }
 
-    function handleClick() {
+    async function handleClick() {
+        await calculatePrice();
         sendData1();
         setTimeout(moin, 1000);
 
@@ -158,7 +168,21 @@
         }
         return result;
     }
+    let showbutton = false;
 
+
+
+    let isChecked = false;
+
+    function onCheckboxChange(event) {
+        isChecked = event.target.checked;
+        checkall();
+
+    }
+
+    function checkall() {
+        showbutton = getvor !== "" && getnach !== "" && getmail1 !== "" && getdate1 !== "" && getbild !== "" && getstunden !== "" && selectedCategory !== "" && selectedtier !== "" && isChecked === true;
+    }
 
 </script>
 <main class="content" style="position: relative">
@@ -302,6 +326,9 @@
 
                             <Input on:input={getmail} type=mail id="mail" size="lg" placeholder="E-Mail" class="w-full m-3" />
                         </div>
+                        <div class="container mx-auto flex flex-row justify-content: center gap-4">
+                        <Checkbox color="red" class="flex justify-center text-lg" bind:checked={isChecked} on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der Datenschutzerklärung ein.</Checkbox>
+                        </div>
                     </AccordionItem>
                 </Accordion>
 
@@ -316,7 +343,9 @@
 
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-4">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück</Button>
+        {#if (showbutton)}
         <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={handleClick}>Anfrage senden</Button>
+        {/if}
         <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={calculatePrice}>Preis berechnen</Button>
     </div>
     <!--
