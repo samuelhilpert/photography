@@ -1,4 +1,5 @@
 
+
 <script>
     /**Bilder Import*/
     
@@ -71,6 +72,7 @@
 
         <div class="card absolute top-20 bg-opacity-50 items-center w-1/2  rounded-full bg-secondary shadow-2xl">
             <p class="text-5xl mt-5 text-center font-semibold text-accent"> Menschenfotografie</p> <br>
+
         </div>
 
       <Gallery class="ml-2 mr-5 gap-4 grid-cols-2 md:grid-cols-4">
@@ -81,9 +83,11 @@
       </Gallery>
     </div>
 
+
     
     </main>
     
     
       
       
+

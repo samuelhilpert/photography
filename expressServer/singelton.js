@@ -1,4 +1,4 @@
-const EmailSingleton = (function() {
+const EmailSingleton = (function () {
     let instance;
     let email;
 
@@ -11,7 +11,7 @@ const EmailSingleton = (function() {
     }
 
     return {
-        getInstance: function() {
+        getInstance: function () {
             if (!instance) {
                 instance = {
                     setEmail,
