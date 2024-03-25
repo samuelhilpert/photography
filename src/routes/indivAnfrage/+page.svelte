@@ -163,7 +163,7 @@
         for (let i = 0; i < array.length; i++) {
             result += array[i];
             if (i !== array.length - 1) {
-                result += ' '; // Füge ein Leerzeichen zwischen den Elementen hinzu, außer beim letzten Element
+                result += ', '; // Füge ein Leerzeichen zwischen den Elementen hinzu, außer beim letzten Element
             }
         }
         return result;
