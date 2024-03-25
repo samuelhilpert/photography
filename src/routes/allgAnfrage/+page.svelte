@@ -1,6 +1,6 @@
 <script>
 
-    import {Button, Input, Textarea} from 'flowbite-svelte';
+    import {Button, Checkbox, Input, Textarea} from 'flowbite-svelte';
     import { Alert } from 'flowbite-svelte';
     import { InfoCircleSolid } from 'flowbite-svelte-icons';
     import { fly } from 'svelte/transition';
@@ -17,36 +17,44 @@
     let getdate1 = "";
     let getanmerkungen = "";
     let test = "";
+    let showbutton = false;
 
 
 
     function inhaltarea2(event) {
         textareaContent1 = event.target.value;
         updateTest();
+        checkall();
     }
     function inhaltarea1(event) {
         textareaContent = event.target.value;
         updateTest();
+        checkall();
     }
     function getvornamen(event) {
         getvor = event.target.value;
         updateTest();
+        checkall();
     }
     function getnachnamen(event) {
         getnach = event.target.value;
         updateTest();
+        checkall();
     }
     function getmail(event) {
         getmail1 = event.target.value;
         updateTest();
+        checkall();
     }
     function getdate(event) {
         getdate1 = event.target.value;
         updateTest();
+        checkall();
     }
     function anmerkungen(event) {
         getanmerkungen = event.target.value;
         updateTest();
+        checkall();
     }
     function updateTest() {
         test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten. Hier sind die Details: Der Kunde wünscht sich "${textareaContent1}". Er stellst dich vor, dass "${textareaContent}"
@@ -85,6 +93,19 @@
         });
 
 
+    }
+
+
+    let isChecked = false;
+
+    function onCheckboxChange(event) {
+        isChecked = event.target.checked;
+        checkall();
+
+    }
+
+    function checkall() {
+        showbutton = textareaContent !== "" && textareaContent1 !== "" && getvor !== "" && getnach !== "" && getmail1 !== "" && getdate1 !== "" && isChecked === true;
     }
 
 
@@ -149,6 +170,7 @@
                     <Textarea rows="4" id="beschreibung" placeholder="weitere Anmerkungen"  on:input={anmerkungen}  />
                 </div>
             </div>
+            <Checkbox color="red" class="flex justify-center text-lg" bind:checked={isChecked} on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der Datenschutzerklärung ein.</Checkbox>
         </div>
 
     </div>
@@ -157,7 +179,9 @@
 -->
      <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-5">
     <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück</Button>
+         {#if showbutton}
          <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={handleClick1}>Anfrage senden</Button>
+            {/if}
 
 </div>
     <!---
