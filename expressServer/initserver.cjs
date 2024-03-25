@@ -33,28 +33,46 @@ app.get('/testneu', async (req, res) => {
     res.json(tags);
 })
 
-app.post('/InsertAllgemeineAnfragen', async(req,res) => {
-    const { vorname, nachname, tag, wuensche, vorstellungen, mail, anmerkungen } = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
+app.post('/InsertAllgemeineAnfragen', async (req, res) => {
+    const {vorname, nachname, tag, wuensche, vorstellungen, mail, anmerkungen} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
     console.log(req.body);
     console.log(vorname, nachname);
     // try {
-    const card = await db.insert({vorname: vorname, nachname: nachname, tag: tag, wuensche: wuensche, vorstellungen: vorstellungen, mail: mail, anmerkungen: anmerkungen}).into('allgemein');
+    const card = await db.insert({
+        vorname: vorname,
+        nachname: nachname,
+        tag: tag,
+        wuensche: wuensche,
+        vorstellungen: vorstellungen,
+        mail: mail,
+        anmerkungen: anmerkungen
+    }).into('allgemein');
 
 })
 
-app.post('/InsertIndividuelleAnfragen', async(req,res) => {
-    const { vorname, nachname, email, kategorie, motiv, stunden, bilder, tag, kosten} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
+app.post('/InsertIndividuelleAnfragen', async (req, res) => {
+    const {vorname, nachname, email, kategorie, motiv, stunden, bilder, tag, kosten} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
     console.log(req.body);
     // try {
-    const card = await db.insert({vorname: vorname, nachname: nachname, email:email, kategorie: kategorie, motiv:motiv, stunden:stunden, bilder:bilder, tag: tag, kosten:kosten}).into('individuell');
+    const card = await db.insert({
+        vorname: vorname,
+        nachname: nachname,
+        email: email,
+        kategorie: kategorie,
+        motiv: motiv,
+        stunden: stunden,
+        bilder: bilder,
+        tag: tag,
+        kosten: kosten
+    }).into('individuell');
 
 })
 
-app.post('/calculatePrice', async(req,res) => {
-    const {category,motiv,stunden, bilder} = req.body;
+app.post('/calculatePrice', async (req, res) => {
+    const {category, motiv, stunden, bilder} = req.body;
     console.log(req.body);
 
-    if (category === "Tier" ) {
+    if (category === "Tier") {
         const anfragen = motiv.length;
         console.log(anfragen);
         if (anfragen === 1) {
@@ -67,7 +85,7 @@ app.post('/calculatePrice', async(req,res) => {
         const price = 500 + motivpreis + (stunden * 100) + (bilder * 5);
         console.log(price);
         res.json(price);
-    } else if (category === "Auto"){
+    } else if (category === "Auto") {
         const anfragen = motiv.length;
         console.log(anfragen);
         if (anfragen === 1) {

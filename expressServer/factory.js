@@ -5,10 +5,12 @@ class AnfrageDetails {
     }
 
     // Methode zur Überprüfung, ob die Anfrage individuell ist.
-    isIndividuell() {}
+    isIndividuell() {
+    }
 
     // Methode zur Rückgabe der Anfrage-Details.
-    getDetails() {}
+    getDetails() {
+    }
 }
 
 // Konkrete Klassen, die von "AnfrageDetails" erben und spezifische Anfrage-Details für verschiedene Kategorien bereitstellen.
@@ -95,10 +97,12 @@ class AllgAnfrageDetails extends AnfrageDetails {
 
 // Abstrakte Fabrikklasse "AnfrageErsteller", die die Methode zum Erstellen von Anfrage-Details definiert.
 class AnfrageErsteller {
-    constructor() {}
+    constructor() {
+    }
 
     // Abstrakte Methode zur Erstellung von Anfrage-Details.
-    erstellen() {}
+    erstellen() {
+    }
 }
 
 // Konkrete Fabriken, die von "AnfrageErsteller" erben und spezifische Anfrage-Details erstellen.

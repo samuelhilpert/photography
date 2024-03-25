@@ -27,7 +27,8 @@ class ShootingDecorator {
 }
 
 // Konkrete Basisklasse, die von "Shooting" erbt.
-class einfaches extends Shooting {}
+class einfaches extends Shooting {
+}
 
 // Konkrete Dekoratorklassen, die von "ShootingDecorator" erben und zusätzliche Funktionalität hinzufügen.
 class TierDecorator extends ShootingDecorator {

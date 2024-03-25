@@ -22,10 +22,17 @@ class ShootingCreator {
     }
 
     // Methoden, die von konkreten Erstellern implementiert werden müssen.
-    selectKategorie() {}
-    selectMotiv() {}
-    selectBilder() {}
-    selectStunden() {}
+    selectKategorie() {
+    }
+
+    selectMotiv() {
+    }
+
+    selectBilder() {
+    }
+
+    selectStunden() {
+    }
 
     // Eine Methode, die das fertige Shooting zurückgibt.
     getResult() {
