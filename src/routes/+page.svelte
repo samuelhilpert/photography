@@ -39,7 +39,7 @@
 </script>
 
 <main class="content" style="position: relative ">
-    <div style="bg-background">
+    <div class="bg-background">
         <div class="banner">
             <img alt="banner" class="rounded-lg brightness-75" src={bannerIdee}/>
             <div class="text-overlay">Photography</div>
