@@ -5,6 +5,7 @@
 </script>
 
 <style>
+
     /* Stil für das Layout */
     .triangle {
         border-left: 28vmax solid transparent;
@@ -25,8 +26,9 @@
     }
 
 
+
 </style>
-<div class="layout">
+<div class="flex bg-background h-full overflow-clip">
 
     <div class="triangle"></div>
     <div class="content bg-background">
@@ -36,10 +38,10 @@
 
         <slot></slot>
 
-        <div class="footer">
-            <Footer/>
-        </div>
 
+		<div class=" bottom-0 w-screen"><Footer /></div>
+
+       
     </div>
 
 
