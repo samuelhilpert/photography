@@ -2,9 +2,7 @@
     let name = 'Svenja';
     import {Gallery} from 'flowbite-svelte';
 
-    /**Import der Bilder
-     * --TODO:
-     */
+
     import bannerIdee from '$lib/img/BannerIdee.png';
     import imgauto from '$lib/img/auto.jpg';
     import hund from '$lib/img/hund.jpg';
