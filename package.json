@@ -1,4 +1,5 @@
 {
+
   "name": "photography",
   "version": "0.0.1",
   "private": true,
@@ -38,4 +39,7 @@
     "svelte-email": "^0.0.4",
     "svelte-mail": "^0.1.1"
   }
-}
+	"dependencies": {
+		"svelte-adapter-azure-swa": "^0.20.0"
+	}
+
