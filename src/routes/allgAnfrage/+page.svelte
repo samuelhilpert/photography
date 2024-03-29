@@ -77,7 +77,7 @@
     async function sendData() {
 
 
-        const API_URL = "http://localhost:3001/InsertAllgemeineAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
+        const API_URL = "https://sasvserver.azurewebsites.net/InsertAllgemeineAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
 
         const response = await fetch(API_URL, {
             method: "POST",

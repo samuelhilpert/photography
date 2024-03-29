@@ -102,7 +102,7 @@
     async function sendData1() {
 
 
-        const API_URL = "http://localhost:3001/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
+        const API_URL = "https://sasvserver.azurewebsites.net/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
 
         const response = await fetch(API_URL, {
             method: "POST",
@@ -140,7 +140,7 @@
     async function calculatePrice() {
 
 
-        const API_URL = "http://localhost:3001/calculatePrice";
+        const API_URL = "https://sasvserver.azurewebsites.net/calculatePrice";
 
         const response = await fetch(API_URL, {
             method: "POST",
