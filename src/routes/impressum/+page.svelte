@@ -1,15 +1,16 @@
+<!-- Import  Button component von dem Flowbite package -->
 <script>
-
     import {Button} from 'flowbite-svelte';
 </script>
 <main class="content" style="position: relative">
+    <!-- Überschrift -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
             <h1 class="text-5xl text-text">Impressum</h1>
         </div>
 
     </div>
-
+<!-- Impressumsinhalt -->
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
             <h1 class="text-lg text-center mt-5">Impressum</h1><br>
@@ -27,7 +28,7 @@
 
     </div>
 
-
+    <!-- Button um zurück zu gehen -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../impre">zurück</Button>
 

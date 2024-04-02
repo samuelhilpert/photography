@@ -1,4 +1,5 @@
 <script>
+    // import Bilder und Button
     import impress from '$lib/img/impressum.png'
     import datenschutz from '$lib/img/datenschutz.png'
     import contact from '$lib/img/1034153.png'
@@ -6,20 +7,23 @@
 </script>
 
 <main class="content" style="position: relative">
+    <!-- Überschrift -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
             <h1 class="text-5xl mb-10 mt-3 text-text">Informationen</h1>
         </div>
 
     </div>
+
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
+       <!-- Impressum Box-->
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={impress}/>
             <a href="/impressum">Impressum</a>
             <p>Über den Link in der Überschrift gelangst Du direkt zu unserem Impressum.</p>
 
         </div>
-
+        <!-- Datenschutz Box-->
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={datenschutz}/>
             <a href="/datenschutz">Datenschutz</a>
@@ -29,6 +33,7 @@
         </div>
 
     </div>
+    <!-- Kontakt Box-->
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={contact}/>
@@ -41,7 +46,7 @@
         </div>
     </div>
 
-
+    <!-- Zurück Button -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../">zurück</Button>
 

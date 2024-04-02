@@ -1,11 +1,11 @@
 <script>
-
+    //import components von flowbite
     import {Alert, Button, Checkbox, Input, Textarea} from 'flowbite-svelte';
     import {InfoCircleSolid} from 'flowbite-svelte-icons';
 
     export let form;
 
-
+    // Variablen für die Eingabefelder
     let textareaContent = "";
     let getvor = "";
     let getnach = "";
@@ -15,8 +15,10 @@
     let getanmerkungen = "";
     let test = "";
     let showbutton = false;
+    let isChecked = false;
 
 
+    //Funktionen zum Aktualisieren der Variablen
     function inhaltarea2(event) {
         textareaContent1 = event.target.value;
         updateTest();
@@ -64,16 +66,19 @@
          Kontakdaten: Email: ${getmail1} Datum: ${getdate1} Anmerkungen: ${getanmerkungen}`;
     }
 
+//Funktionen zum Senden der Daten an die Mail und die Datenbank
     function handleClick1() {
         sendData();
-        setTimeout(moin, 1000);
+        setTimeout(sendMail, 1000);
 
     }
 
-    function moin() {
+    //Funktion zum Senden der Mail
+    function sendMail() {
         document.getElementById('sendmail2').dispatchEvent(new Event('click'));
     }
 
+    //Funktion zum Senden der Daten an die Datenbank
     async function sendData() {
 
 
@@ -98,15 +103,14 @@
 
     }
 
-
-    let isChecked = false;
-
+    //Funktion zum Aktualisieren, wenn sich eine Checkbox ändert
     function onCheckboxChange(event) {
         isChecked = event.target.checked;
         checkall();
 
     }
 
+    //Funktion zum Überprüfen, ob alle Felder ausgefüllt sind
     function checkall() {
         showbutton = textareaContent !== "" && textareaContent1 !== "" && getvor !== "" && getnach !== "" && getmail1 !== "" && getdate1 !== "" && isChecked === true;
     }
@@ -115,6 +119,7 @@
 </script>
 <main class="content" style="position: relative">
 
+<!-- Alert, der angezeigt wird, wenn die Anfrage erfolgreich übermittelt wurde -->
     {#if form?.success}
         <Alert color="dark" dismissable>
             <InfoCircleSolid slot="icon" class="w-4 h-4"/>
@@ -124,7 +129,7 @@
         </Alert>
     {/if}
 
-
+    <!-- Überschrift -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
             <h1><span class="text-5xl text-text">Deine allgemeine</span> <span
@@ -134,7 +139,7 @@
 
     </div>
 
-
+    <!-- Eingabefelder für die Anfrage -->
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
 
@@ -172,15 +177,14 @@
                     <Textarea id="beschreibung" on:input={anmerkungen} placeholder="weitere Anmerkungen" rows="4"/>
                 </div>
             </div>
+            <!-- Checkbox für die Einwilligung zur Datenverarbeitung -->
             <Checkbox bind:checked={isChecked} class="flex justify-center text-lg" color="red"
                       on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der Datenschutzerklärung ein.
             </Checkbox>
         </div>
 
     </div>
-    <!--
-    <p class="text-text">{textareaContent1}{textareaContent}{getvor}{getnach} {getmail1} {getdate1}{getanmerkungen}</p>
--->
+    <!-- Buttons zum Senden der Anfrage und zum Zurückgehen -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-5">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück
         </Button>
@@ -191,11 +195,8 @@
         {/if}
 
     </div>
-    <!---
-    <p class="text-accent">{test}</p>
-    -->
 
-
+    <!-- Formular zum Senden der Mail -->
     <div class="wrapper">
         <fieldset>
             <legend class="invisible">Send Emails</legend>
