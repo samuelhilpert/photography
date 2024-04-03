@@ -19,14 +19,14 @@
        <!-- Impressum Box-->
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={impress}/>
-            <a href="/impressum">Impressum</a>
+            <a class="font-bold" href="/impressum">Impressum</a>
             <p>Über den Link in der Überschrift gelangst Du direkt zu unserem Impressum.</p>
 
         </div>
         <!-- Datenschutz Box-->
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={datenschutz}/>
-            <a href="/datenschutz">Datenschutz</a>
+            <a class="font-bold" href="/datenschutz">Datenschutz</a>
             <p>Über den Link in der Überschrift gelangst Du direkt zu der Datenschutzerklärung. Hier zeigen wir dir auf,
                 wie wir mit deinen Daten umgehen.</p>
 
@@ -37,12 +37,19 @@
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={contact}/>
-            <p>Hi!</p>
+            <p class="font-bold">Hi!</p>
             <p>Herzlich Willkommen auf dieser Webseite. Wir sind Svenja und Samuel und studieren aktuell im 4. Semester.
                 Diese Webseite wurde für ein Projekt an der Dualen Hochschule Baden-Württemberg entworfen und erstellt.
                 Es handelt sich um keine echtes Portfolio. Es kann kein wirklicher Fotograf angefragt werden.</p>
             <p>Bei Anfrage, Fehlerreporting oder Supportanfragen melden sie sich bitte unter den bekannten
                 Mail-Adressen. Leider kann eine Bearbeitungszeit unter 1 Woche nicht gewährleistet werden.</p>
+        </div>
+    </div>
+    <!-- AGB Box-->
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
+        <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
+            <a class="font-bold" href="/agb">Allgemeine Geschäftsbedinungen</a>
+            <p>Über den Link in der Überschrift gelangst du direkt zu unseren Allgemeinen Geschäftsbedingungen, die du dir auf jeden Fall durchlesen wirst und diesen sowieso zustimmst, egal ob du eine Waschmaschine kaufst oder nicht.</p>
         </div>
     </div>
 
@@ -51,5 +58,5 @@
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../">zurück</Button>
 
     </div>
-    <div class="h-96"></div>
+
 </main>
