@@ -48,22 +48,22 @@
         <div class="ml-2.5 mr-2.5 mt-3.5">
             <Gallery class="scale-95 grid-cols-2 gap-4 md:grid-cols-4 ">
                 <button class="kategorieBezeichnung" on:click={handleAutoClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgAuto}/>
+                    <Gallery items={imgAuto}/>
                     <div class="textAuto"> Autos</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
                 <button class="kategorieBezeichnung" on:click={handlePferdClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgPferd}/>
+                    <Gallery items={imgPferd}/>
                     <div class="textAuto"> Pferde</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
                 <button class="kategorieBezeichnung" on:click={handleMenschClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgMensch}/>
+                    <Gallery items={imgMensch}/>
                     <div class="textAuto"> Menschen</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
                 <button class="kategorieBezeichnung" on:click={handleHundClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgHund}/>
+                    <Gallery items={imgHund}/>
                     <div class="textAuto"> Hunde</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
@@ -117,6 +117,7 @@
         opacity: 0;
     }
 
+    
     .kategorieBezeichnung:hover .textAuto {
         opacity: 1;
         scale: 1;
@@ -125,5 +126,9 @@
     .kategorieBezeichnung:hover .textAutoU {
         opacity: 1;
         scale: 1;
+    }
+  
+    .kategorieBezeichnung {
+        @apply hover:grayscale hover:brightness-75;
     }
 </style>
