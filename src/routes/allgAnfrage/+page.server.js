@@ -1,8 +1,8 @@
-import { GOOGLE_EMAIL } from "$env/static/private";
+import {GOOGLE_EMAIL} from "$env/static/private";
 import transporter from "$lib/emailSetup.server.js";
 
 export const actions = {
-    default: async ({ request }) => {
+    default: async ({request}) => {
         try {
             const formData = await request.formData();
             const email = formData.get("to");

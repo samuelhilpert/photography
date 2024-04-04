@@ -1,8 +1,7 @@
-
 <script>
-/**Bilder Import*/
+    /**Bilder Import*/
 
-    import { Gallery } from 'flowbite-svelte';
+    import {Gallery} from 'flowbite-svelte';
     import auto1 from '$lib/img/autos/IMG_0122.jpg';
     import auto2 from '$lib/img/autos/IMG_0018-Edit.jpg';
     import auto3 from '$lib/img/autos/IMG_0129.jpg';
@@ -13,7 +12,6 @@
     import auto8 from '$lib/img/autos/IMG_9657.jpg';
     import auto9 from '$lib/img/autos/IMG_9698.jpg';
     import auto10 from '$lib/img/autos/IMG_9807.jpg';
-    import auto11 from '$lib/img/autos/1709463717031.jpg';
     import auto12 from '$lib/img/autos/1709463717041.jpg';
     import auto13 from '$lib/img/autos/1709463776881.jpg';
     import auto14 from '$lib/img/autos/1709463776910.jpg';
@@ -22,50 +20,51 @@
     import auto17 from '$lib/img/autos/IMG_0140.jpg';
 
 
+    /**Bilder Gruppierung*/
 
+    const imagesAuto = [
+        {alt: 'erbology', src: auto1},
+        {alt: 'lamp', src: auto9},
+        {alt: 'auto', src: auto16},
+        {alt: 'small bag', src: auto3},
+    ];
+    const imagesAuto2 = [
+        {alt: 'plants', src: auto4},
+        {alt: 'shoe', src: auto6},
+        {alt: 'auto17', src: auto17},
+        {alt: 'small bag', src: auto8}
+    ];
+    const imagesAuto3 = [
+        {alt: 'lamp', src: auto12},
+        {alt: 'foto', src: auto14},
+        {alt: 'watch', src: auto5},
+        {alt: 'toiletbag', src: auto10}
+    ];
+    const imagesAuto4 = [
+        {alt: 'cream', src: auto15},
+        {alt: 'shoes', src: auto2},
+        {alt: 'toiletbag', src: auto13},
+        {alt: 'auto15', src: auto7}
+    ];
+</script>
 
-/**Bilder Gruppierung*/
-
-const imagesAuto = [
-    { alt: 'erbology', src: auto1 },
-    { alt: 'lamp', src: auto9 },
-    { alt: 'auto', src: auto16 },
-    { alt: 'small bag', src: auto3 },
-  ];
-const imagesAuto2 = [
-    { alt: 'plants', src: auto4 },
-    { alt: 'shoe', src: auto6 },
-    { alt: 'auto17', src: auto17 },
-    { alt: 'small bag', src: auto8 }
-  ];
-  const imagesAuto3 = [
-    { alt: 'lamp', src: auto12 },
-    { alt: 'foto', src: auto14 },
-    { alt: 'watch', src: auto5 },
-    { alt: 'toiletbag', src: auto10 }
-  ];
-  const imagesAuto4 = [
-    { alt: 'cream', src: auto15 },
-    { alt: 'shoes', src: auto2 },
-    { alt: 'toiletbag', src: auto13 },
-    { alt: 'auto15', src: auto7}
-  ];
-  </script>
-
-  <style>
+<style>
     /**Formatierung der Bilder
     --> TODO: Anpassung! */
     .imageContainer {
         @apply w-screen;
         display: flex;
-        gap: 10px; 
+        gap: 10px;
     }
+
     .images {
         max-width: 20%;
         height: auto;
-      }
+    }
+
     /**Header Text mit Card stylen*/
     .card {
+
         margin-left: 25%;
       }
   </style>
@@ -83,6 +82,7 @@ const imagesAuto2 = [
     <Gallery items={imagesAuto2} />
     <Gallery items={imagesAuto4} />
   </Gallery>
+
 </main>
 
 

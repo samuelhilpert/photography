@@ -1,4 +1,5 @@
 <script>
+
     import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte';
     import logo from '$lib/img/Logo.jpg';
     
@@ -12,7 +13,9 @@
         <FooterLink href="/">Datenschutz/Impressum</FooterLink>
 #        <FooterLink href="/">Info</FooterLink>
       </FooterLinkGroup>
+
+   
     </div>
-    <hr class="my-6 border-primary sm:mx-auto dark:border-primary lg:my-8" />
-    <FooterCopyright href="/" by="SaSv Photography™" class="text-text " />
-  </Footer>
+    <hr class="my-6 border-primary sm:mx-auto dark:border-primary lg:my-8"/>
+    <FooterCopyright by="SaSv Photography™" class="text-text " href="/"/>
+</Footer>
