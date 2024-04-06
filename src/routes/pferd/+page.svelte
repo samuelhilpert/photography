@@ -20,24 +20,24 @@
     /**Bilder Gruppierung*/
 
     const imagesPferd = [
-        {alt: 'erbology', src: pferd1},
-        {alt: 'lamp', src: pferd5},
-        {alt: 'auto', src: pferd9}
+        {alt: 'bild', src: pferd1},
+        {alt: 'bild', src: pferd5},
+        {alt: 'bild', src: pferd9}
     ];
     const imagesPferd2 = [
-        {alt: 'plants', src: pferd2},
-        {alt: 'shoe', src: pferd6},
-        {alt: 'auto17', src: pferd10}
+        {alt: 'bild', src: pferd2},
+        {alt: 'bild', src: pferd6},
+        {alt: 'bild', src: pferd10}
     ];
     const imagesPferd3 = [
-        {alt: 'lamp', src: pferd3},
-        {alt: 'foto', src: pferd7},
-        {alt: 'watch', src: pferd11}
+        {alt: 'bild', src: pferd3},
+        {alt: 'bild', src: pferd7},
+        {alt: 'bild', src: pferd11}
     ];
     const imagesPferd4 = [
-        {alt: 'cream', src: pferd4},
-        {alt: 'shoes', src: pferd8},
-        {alt: 'toiletbag', src: pferd12}
+        {alt: 'bild', src: pferd4},
+        {alt: 'bild', src: pferd8},
+        {alt: 'bild', src: pferd12}
     ];
 </script>
 
@@ -66,7 +66,7 @@
 
 
   <div class="card absolute top-20 bg-opacity-50 items-center w-1/2  rounded-full bg-secondary shadow-2xl">
-    <p class="text-5xl mt-5 text-center font-semibold text-accent"> Pferdefotografie</p> <br>
+    <p class="text-5xl mt-5 mb-2 text-center font-semibold text-accent"> Pferdefotografie</p> <br>
 </div>
 <!-- Einfügen / Abbilden der Bilder-->
   <Gallery class="gap-4 grid-cols-2 md:grid-cols-4">

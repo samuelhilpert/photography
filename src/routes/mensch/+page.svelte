@@ -23,24 +23,24 @@
     /**Bilder Gruppierung*/
     
     const imagesAuto = [
-        { alt: 'erbology', src: mensch11 },
-        { alt: 'lamp', src: mensch51 },
-        { alt: 'auto', src: mensch91 }
+        { alt: 'bild', src: mensch11 },
+        { alt: 'bild', src: mensch51 },
+        { alt: 'bild', src: mensch91 }
       ];
     const imagesAuto2 = [
-        { alt: 'plants', src: mensch22 },
-        { alt: 'shoe', src: mensch62 },
-        { alt: 'auto17', src: mensch102 }
+        { alt: 'bild', src: mensch22 },
+        { alt: 'bild', src: mensch62 },
+        { alt: 'bild', src: mensch102 }
       ];
       const imagesAuto3 = [
-        { alt: 'lamp', src: mensch33 },
-        { alt: 'foto', src: mensch73 },
-        { alt: 'watch', src: mensch113 }
+        { alt: 'bild', src: mensch33 },
+        { alt: 'bild', src: mensch73 },
+        { alt: 'bild', src: mensch113 }
       ];
       const imagesAuto4 = [
-        { alt: 'cream', src: mensch44 },
-        { alt: 'shoes', src: mensch84 },
-        { alt: 'toiletbag', src: mensch124 }
+        { alt: 'bild', src: mensch44 },
+        { alt: 'bild', src: mensch84 },
+        { alt: 'bild', src: mensch124 }
       ];
       </script>
     
@@ -74,7 +74,7 @@
             <p class="text-5xl mt-5 text-center font-semibold text-accent"> Menschen </p> <br>
         </div>
 
-      <Gallery class="ml-2 mr-5 gap-4 grid-cols-2 md:grid-cols-4">
+      <Gallery class="ml-2 mr-5 mt-2 mb-2 gap-4 grid-cols-2 md:grid-cols-4">
         <Gallery items={imagesAuto} />
         <Gallery items={imagesAuto2} />
         <Gallery items={imagesAuto3} />
