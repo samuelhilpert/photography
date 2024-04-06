@@ -20,13 +20,13 @@
 
     </NavBrand>
     <NavHamburger on:click={toggle}/>
-    <NavUl {hidden}>
+    <NavUl {hidden} >
         <NavLi class="text-text" href="/">Home</NavLi>
         <NavLi class="cursor-pointer text-text">
             Portfolio
             <ChevronDownOutline class="w-3 h-3 ms-2  text-text dark:text-text inline"/>
         </NavLi>
-        <MegaMenu class="w-1/4 rounded-lg bg-background text-text" items={menu} let:item>
+        <MegaMenu class="w-1/4 mt-6 rounded-lg bg-background text-text z-50 " items={menu} let:item>
             <a class="hover:underline hover:text-accent-600 dark:hover:text-primary-500" href={item.href}>
                 {item.name}
             </a>
