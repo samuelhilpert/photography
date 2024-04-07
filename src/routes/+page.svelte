@@ -48,25 +48,26 @@
         <div class="ml-2.5 mr-2.5 mt-3.5">
             <Gallery class="scale-95 grid-cols-2 gap-4 md:grid-cols-4 ">
                 <button class="kategorieBezeichnung" on:click={handleAutoClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgAuto}/>
+                    <Gallery items={imgAuto}/>
                     <div class="textAuto"> Autos</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
                 <button class="kategorieBezeichnung" on:click={handlePferdClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgPferd}/>
+                    <Gallery items={imgPferd}/>
                     <div class="textAuto"> Pferde</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
                 <button class="kategorieBezeichnung" on:click={handleMenschClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgMensch}/>
+                    <Gallery items={imgMensch}/>
                     <div class="textAuto"> Menschen</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
-                <button class="kategorieBezeichnung" on:click={handleHundClick}>
-                    <Gallery class="hover:grayscale hover:brightness-75" items={imgHund}/>
+                <button class="kategorieBezeichnung"  on:click={handleHundClick}>
+                    <Gallery items={imgHund}/>
                     <div class="textAuto"> Hunde</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
+                
             </Gallery>
         </div>
     </div>
@@ -102,21 +103,21 @@
         left: 63%; /* Horizontal zentrieren */
         transform: translate(-50%, -50%); /* Zentrierung anpassen */
         font-size: 50px;
-        /* Weitere Stile nach Bedarf */
     }
 
     /**Dynamischer Text über den Kategoriebildern*/
 
     .textAuto {
-        @apply relative -translate-y-64 text-2xl font-semibold text-text;
+        @apply relative -translate-y-64 text-2xl font-semibold text-text z-40;
         opacity: 0;
     }
 
     .textAutoU {
-        @apply relative -translate-y-64 text-base text-text;
+        @apply relative -translate-y-64 text-base text-text z-40;
         opacity: 0;
     }
 
+    
     .kategorieBezeichnung:hover .textAuto {
         opacity: 1;
         scale: 1;
@@ -125,5 +126,9 @@
     .kategorieBezeichnung:hover .textAutoU {
         opacity: 1;
         scale: 1;
+    }
+  
+    .kategorieBezeichnung {
+        @apply z-0 hover:grayscale hover:brightness-75;
     }
 </style>
