@@ -179,8 +179,9 @@
             </div>
             <!-- Checkbox für die Einwilligung zur Datenverarbeitung -->
             <Checkbox bind:checked={isChecked} class="flex justify-center text-lg" color="red"
-                      on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der Datenschutzerklärung ein.
+                      on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der&nbsp<a class="font-bold" href="../datenschutz">Datenschutzerklärung</a>&nbspein.
             </Checkbox>
+            <p class="flex justify-center text-lg">Mit dem Abschicken der Anfrage stimme ich den&nbsp<a class="font-bold" href="../agb">AGB</a>&nbspzu. </p>
         </div>
 
     </div>

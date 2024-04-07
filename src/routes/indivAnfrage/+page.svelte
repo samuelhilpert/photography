@@ -373,11 +373,11 @@
                                type=mail />
                     </div>
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
-                        <Checkbox bind:checked={isChecked} class="flex justify-center text-lg" color="red"
-                                  on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der
-                            Datenschutzerklärung ein.
+                        <Checkbox bind:checked={isChecked} class="flex justify-center text-lg mx-auto" color="red"
+                                  on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der&nbsp<a class="font-bold" href="../datenschutz">Datenschutzerklärung</a>&nbspein.
                         </Checkbox>
                     </div>
+                    <p class="flex justify-center text-lg text-background">Mit dem Abschicken der Anfrage stimme ich den&nbsp<a class="font-bold" href="../agb">AGB</a>&nbspzu. </p>
                 </AccordionItem>
             </Accordion>
 
