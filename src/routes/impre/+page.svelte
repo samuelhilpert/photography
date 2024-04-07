@@ -38,11 +38,12 @@
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={contact}/>
             <p class="font-bold">Hi!</p>
-            <p>Herzlich Willkommen auf dieser Webseite. Wir sind Svenja und Samuel und studieren aktuell im 4. Semester.
+            <p>Herzlich Willkommen auf dieser Webseite. Wir sind Svenja und Samuel und studieren aktuell im 4. Semester Wirtschaftsinformatik an der Dualen Hochschule Baden-Württemberg am Standort Mannheim.
                 Diese Webseite wurde für ein Projekt an der Dualen Hochschule Baden-Württemberg entworfen und erstellt.
                 Es handelt sich um keine echtes Portfolio. Es kann kein wirklicher Fotograf angefragt werden.</p>
             <p>Bei Anfrage, Fehlerreporting oder Supportanfragen melden sie sich bitte unter den bekannten
                 Mail-Adressen. Leider kann eine Bearbeitungszeit unter 1 Woche nicht gewährleistet werden.</p>
+            <p>Hier gelangst du sofort zu unserem Social Media: <a href="https://www.instagram.com/svenja.vlg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Svenja</a>,&nbsp;<a href="https://www.instagram.com/samhil03/">Samuel</a> </p>
         </div>
     </div>
     <!-- AGB Box-->
