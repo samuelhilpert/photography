@@ -1,9 +1,10 @@
 <script>
-
+    // import Button von flowbite
     import {Button} from 'flowbite-svelte';
 </script>
 
 <main class="content" style="position: relative">
+   <!-- Überschrift -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
             <h1 class="text-5xl text-text">Datenschutz</h1>
@@ -13,7 +14,7 @@
 
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
-
+            <!-- Datenschutztext -->
             <div class="ml-5 mr-5 mt-10">
                 <h1 class="text-lg font-bold">1. Datenschutz auf einen Blick</h1>
                 <h2 class="font-bold">Allgemeine Hinweise</h2>
@@ -277,7 +278,7 @@
                 <p>https://www.e-recht24.de</p></div>
         </div>
     </div>
-
+    <!-- Zurück Button -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../impre">zurück</Button>
 

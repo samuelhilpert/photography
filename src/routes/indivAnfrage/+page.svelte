@@ -1,5 +1,6 @@
 <script>
 
+    // import von Bildern und flowbite svelte components
     import auto from "$lib/img/1709463717041.jpg";
     import pferd from "$lib/img/img.png";
     import mensch from "$lib/img/img_1.png";
@@ -15,18 +16,27 @@
     import {InfoCircleSolid} from "flowbite-svelte-icons";
 
     export let form;
+
+
+    // erstellen von Variablen
     let test = "";
     let pricecalculate = "";
-
-
     let getvor = "";
     let getnach = "";
     let getmail1 = "";
     let getdate1 = "";
     let getbild = "";
     let getstunden = "";
+    let selectedCategory;
+    let selectedtier;
+    let isAutoSelected = false;
+    let isTierSelected = false;
+    let isMenschSelected = false;
+    let showbutton = false;
+    let isChecked = false;
 
 
+    // Funktionen für Speicherung der Eingaben in den Variablen
     function getvornamen(event) {
         getvor = event.target.value;
         updateTest();
@@ -67,12 +77,8 @@
         test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten. Hier sind die Details: Der Kunde wünscht sich ein Shooting mit einem ${selectedCategory}. Die gewünschte Bildart ist ${selectedtier}. Der Kunde wünscht sich ${getbild} Bilder und will ${getstunden} Stunden shooten. Der Kunde kann am ${getdate1} das Shooting durchführen und seine Mail-Adresse lautet ${getmail1}.`;
     }
 
-    let selectedCategory;
-    let selectedtier;
-    let isAutoSelected = false;
-    let isTierSelected = false;
-    let isMenschSelected = false;
 
+    // Funktionen für die Auswahl der Kategorie
     function handleRadioChange(event) {
         const selectedValue = event.target.value;
 
@@ -99,10 +105,10 @@
 
     }
 
+    // Funktionen zum Senden der Daten an die Datenbank
     async function sendData1() {
 
-
-        const API_URL = "http://localhost:3001/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
+        const API_URL = "https://sasvserver.azurewebsites.net/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
 
         const response = await fetch(API_URL, {
             method: "POST",
@@ -126,21 +132,24 @@
 
     }
 
+    // Aufruf der Funktion zum Senden der Daten an die Datenbank
     async function handleClick() {
         await calculatePrice();
         sendData1();
-        setTimeout(moin, 1000);
+        setTimeout(sendMail, 1000);
 
     }
 
-    function moin() {
+
+    // Funktion zum Senden der Mail
+    function sendMail() {
         document.getElementById('sendmail1').dispatchEvent(new Event('click'));
     }
 
+    // Funktion zum Berechnen des Preises
     async function calculatePrice() {
 
-
-        const API_URL = "http://localhost:3001/calculatePrice";
+        const API_URL = "https://sasvserver.azurewebsites.net/calculatePrice";
 
         const response = await fetch(API_URL, {
             method: "POST",
@@ -162,34 +171,34 @@
 
     }
 
+    // Funktion zum Zusammenfügen eines Arrays in einen String
     function implodeArray(array) {
         let result = '';
         for (let i = 0; i < array.length; i++) {
             result += array[i];
             if (i !== array.length - 1) {
-                result += ', '; // Füge ein Leerzeichen zwischen den Elementen hinzu, außer beim letzten Element
+                result += ', ';
             }
         }
         return result;
     }
 
-    let showbutton = false;
 
-
-    let isChecked = false;
-
+    // Funktion, die aufgerufen wird, wenn sich der Status einer Checkbox ändert
     function onCheckboxChange(event) {
         isChecked = event.target.checked;
         checkall();
 
     }
 
+    // Funktion, die prüft, ob alle Eingaben gemacht wurden
     function checkall() {
         showbutton = getvor !== "" && getnach !== "" && getmail1 !== "" && getdate1 !== "" && getbild !== "" && getstunden !== "" && selectedCategory !== "" && selectedtier !== "" && isChecked === true;
     }
 
 </script>
 <main class="content" style="position: relative">
+    <!-- Anzeigen einer Erfolgsmeldung wenn Mail verschickt -->
     {#if form?.success}
         <Alert color="dark" dismissable>
             <InfoCircleSolid slot="icon" class="w-4 h-4"/>
@@ -198,6 +207,8 @@
             </Button>
         </Alert>
     {/if}
+
+    <!-- Überschrift -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
             <h1><span class="text-5xl text-text">Deine individuelle</span> <span
@@ -208,7 +219,9 @@
 
     </div>
 
+    <!-- Komponenten für die Auswahl der Kategorie, des Motivs, des Umfangs und der Kontaktdaten -->
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
+        <!-- Accordion für die Auswahl des Motives -->
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
             <Accordion>
                 <AccordionItem open>
@@ -238,6 +251,7 @@
                         </div>
                     </div>
                 </AccordionItem>
+                <!-- Accordion für die Auswahl der Kategorie -->
                 <AccordionItem>
                     <span slot="header">Was stellst du dir da vor? (Mehrfachauswahl möglich)</span>
 
@@ -319,6 +333,7 @@
                     {/if}
 
                 </AccordionItem>
+                <!-- Accordion für die Auswahl des Umfangs -->
                 <AccordionItem>
                     <span slot="header">Welchen Umfang stellst du dir vor?</span>
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
@@ -340,6 +355,7 @@
                     </div>
 
                 </AccordionItem>
+                <!-- Accordion für die Eingabe der Kontaktdaten -->
                 <AccordionItem>
                     <span slot="header">Kontaktdaten</span>
                     <div class="flex w-full  rounded-lg   pl-3 pr-3">
@@ -365,7 +381,7 @@
                 </AccordionItem>
             </Accordion>
 
-
+            <!-- Anzeigen des Preises -->
             <div class="text-background text-center font-bold text-xl mb-1 mt-1"> Dein individuelles
                 Angebot: {pricecalculate} €
             </div>
@@ -386,17 +402,8 @@
             berechnen
         </Button>
     </div>
-    <!--
-    <p class="text-accent">{selectedCategory}</p>
-    <p class="text-accent">{selectedtier}</p>
-    <p class="text-accent">{getvor}</p>
-    <p class="text-accent">{getnach}</p>
-    <p class="text-accent">{getmail1}</p>
-    <p class="text-accent">{getdate1}</p>
-    <p class="text-accent">{getstunden}</p>
-    <p class="text-accent">{getbild}</p>
-    <p class="success text-accent">{form?.success || ""}</p>
-    -->
+
+    <!-- Formular zum Senden der Mail -->
     <div class="wrapper">
         <fieldset>
             <legend class="invisible">Send Emails</legend>
