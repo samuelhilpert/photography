@@ -1,10 +1,11 @@
 <script>
-
+    // import Bilder und Komponenten für die Seite
     import shoot from "$lib/img/photo-shoot.png";
     import {Button} from "flowbite-svelte";
     import {CameraFotoSolid} from "flowbite-svelte-icons";
 </script>
 <main class="content" style="position: relative">
+    <!-- Box für Übersicht der Anfragen -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-1">
             <h1 class="text-5xl mb-10 mt-3 text-text text-center">Deine Anfrage an mich</h1>
@@ -15,7 +16,9 @@
         </div>
 
     </div>
+
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
+        <!-- Box für allgemeine Anfrage -->
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <CameraFotoSolid class="w-20 h-20 mx-auto shadow rounded-2xl shadow-background"/>
             <h1 class="text-3xl mt-2">Allgemeine Anfrage</h1>
@@ -25,7 +28,7 @@
                 Starte hier mit der allgemeinen Anfrage
             </Button>
         </div>
-
+        <!-- Box für individuelle Anfrage -->
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-20 w-20 rounded-2xl mx-auto shadow shadow-background " src={shoot}/>
             <h1 class="text-3xl mt-2">Individuelle Anfrage</h1>
@@ -37,7 +40,7 @@
         </div>
 
     </div>
-
+    <!-- Button für zurück -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../">zurück</Button>
 

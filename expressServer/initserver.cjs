@@ -37,7 +37,11 @@ app.post('/InsertAllgemeineAnfragen', async (req, res) => {
     const {vorname, nachname, tag, wuensche, vorstellungen, mail, anmerkungen} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
     console.log(req.body);
     console.log(vorname, nachname);
-    // try {
+    if (!vorname || !nachname || !tag || !mail) {
+        res.status(400).send('Es fehlen erforderliche Felder.');
+        return;
+    }
+    try {
     const card = await db.insert({
         vorname: vorname,
         nachname: nachname,
@@ -47,13 +51,18 @@ app.post('/InsertAllgemeineAnfragen', async (req, res) => {
         mail: mail,
         anmerkungen: anmerkungen
     }).into('allgemein');
+        res.status(201).json({ id: card.id });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Ein Fehler ist aufgetreten.');
+    }
 
 })
 
 app.post('/InsertIndividuelleAnfragen', async (req, res) => {
     const {vorname, nachname, email, kategorie, motiv, stunden, bilder, tag, kosten} = req.body; // Annahme: Die Werte für front und back kommen im Request Body an
     console.log(req.body);
-    // try {
+    try {
     const card = await db.insert({
         vorname: vorname,
         nachname: nachname,
@@ -65,6 +74,13 @@ app.post('/InsertIndividuelleAnfragen', async (req, res) => {
         tag: tag,
         kosten: kosten
     }).into('individuell');
+        console.log("1")
+        res.status(201).send('Eintrag erfolgreich erstellt.');
+        console.log("2")
+    } catch (error) {
+        console.error(error);
+        res.status(400).send('Ein Fehler ist aufgetreten.');
+    }
 
 })
 
@@ -81,6 +97,8 @@ app.post('/calculatePrice', async (req, res) => {
             motivpreis = 40;
         } else if (anfragen === 3) {
             motivpreis = 60;
+        } else if (anfragen === 0) {
+            motivpreis = 0;
         }
         const price = 500 + motivpreis + (stunden * 100) + (bilder * 5);
         console.log(price);
@@ -94,6 +112,8 @@ app.post('/calculatePrice', async (req, res) => {
             motivpreis = 40;
         } else if (anfragen === 3) {
             motivpreis = 60;
+        } else if (anfragen === 0) {
+            motivpreis = 0;
         }
         const price = 250 + motivpreis + (stunden * 100) + (bilder * 5);
         console.log(price);
@@ -105,12 +125,14 @@ app.post('/calculatePrice', async (req, res) => {
             motivpreis = 0;
         } else if (anfragen === 2) {
             motivpreis = 40;
-        } else if (anfragen === 3) {
-            motivpreis = 60;
+        } else if (anfragen === 0) {
+            motivpreis = 0;
         }
         const price = 100 + motivpreis + (stunden * 100) + (bilder * 5);
         console.log(price);
         res.json(price);
+    } else {
+        res.status(400).send('Invalid category');
     }
 
 })
@@ -118,4 +140,6 @@ app.post('/calculatePrice', async (req, res) => {
 //Muss am Schluss sein, da vor dem Starten erstmal alles definiert werden muss
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    const address = app.listen().address();
+    console.log(`Server address: ${address.port}`);
 });
