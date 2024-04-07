@@ -2,10 +2,10 @@
 
     // import von Bildern und flowbite svelte components
     import auto from "$lib/img/1709463717041.jpg";
-    import pferd from "$lib/img/img.png";
-    import mensch from "$lib/img/img_1.png";
-    import pferdbewegung from "$lib/img/IMG_1462.png";
-    import hundportrait from "$lib/img/img_2.png";
+    import pferd from "$lib/img/img.jpg";
+    import mensch from "$lib/img/img_1.jpg";
+    import pferdbewegung from "$lib/img/IMG_1462.jpg";
+    import hundportrait from "$lib/img/img_2.jpg";
     import pferdmensch from "$lib/img/IMG_5141-Edit.jpg";
     import carinmovement from "$lib/img/carinmove.jpeg";
     import porsche from "$lib/img/porsche.jpeg";
