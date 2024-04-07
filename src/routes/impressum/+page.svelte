@@ -10,7 +10,7 @@
         </div>
 
     </div>
-<!-- Impressumsinhalt -->
+    <!-- Impressumsinhalt -->
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 border rounded-lg shadow-md bg-text ">
             <h1 class="text-lg text-center mt-5 font-bold">Impressum</h1><br>

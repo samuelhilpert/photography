@@ -370,14 +370,16 @@
 
 
                         <Input class="w-full m-3" id="mail" on:input={getmail} placeholder="E-Mail" size="lg"
-                               type=mail />
+                               type=mail/>
                     </div>
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
                         <Checkbox bind:checked={isChecked} class="flex justify-center text-lg mx-auto" color="red"
-                                  on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der&nbsp<a class="font-bold" href="../datenschutz">Datenschutzerklärung</a>&nbspein.
+                                  on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der&nbsp<a
+                                class="font-bold" href="../datenschutz">Datenschutzerklärung</a>&nbspein.
                         </Checkbox>
                     </div>
-                    <p class="flex justify-center text-lg text-background">Mit dem Abschicken der Anfrage stimme ich den&nbsp<a class="font-bold" href="../agb">AGB</a>&nbspzu. </p>
+                    <p class="flex justify-center text-lg text-background">Mit dem Abschicken der Anfrage stimme ich
+                        den&nbsp<a class="font-bold" href="../agb">AGB</a>&nbspzu. </p>
                 </AccordionItem>
             </Accordion>
 
@@ -405,21 +407,21 @@
 
     <!-- Formular zum Senden der Mail -->
     <div class="wrapper hidden">
-            <form class="container" method="POST">
-                <button class="text-accent hidden" id="sendmail1" type="submit">Send</button>
-                <div>
-                    <div class="input">
-                        <input name="to" type="email" value="samuelhilpert@web.de"/>
-                    </div>
-                    <div class="input">
-                        <input name="subject" type="text" value="Du hast eine neue Anfrage: Individuelle Anfrage"/>
-                    </div>
-                    <div class="input">
-                        <textarea name="body" rows="6" value="{test}"/>
-                    </div>
+        <form class="container" method="POST">
+            <button class="text-accent hidden" id="sendmail1" type="submit">Send</button>
+            <div>
+                <div class="input">
+                    <input name="to" type="email" value="samuelhilpert@web.de"/>
                 </div>
+                <div class="input">
+                    <input name="subject" type="text" value="Du hast eine neue Anfrage: Individuelle Anfrage"/>
+                </div>
+                <div class="input">
+                    <textarea name="body" rows="6" value="{test}"/>
+                </div>
+            </div>
 
-            </form>
+        </form>
     </div>
 
 </main>
