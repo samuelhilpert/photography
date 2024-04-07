@@ -127,7 +127,7 @@
         opacity: 1;
         scale: 1;
     }
-  
+
     .kategorieBezeichnung {
         @apply z-0 hover:grayscale hover:brightness-75;
     }

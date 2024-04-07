@@ -17,14 +17,13 @@
             <p class="ml-5">Angaben gemäß § 5 TMG:</p> <br>
             <h1 class="text-lg ml-5 font-bold">Vertreten durch:</h1>
             <p class="ml-5">Samuel Hilpert </p>
-            <p class="ml-5">Coblitzallee 1-9 68163 Mannheim</p><br>
+            <p class="ml-5">S1 16, 68161 Mannheim</p><br>
             <h1 class="text-lg ml-5 font-bold">Kontakt</h1>
-            <p class="ml-5">Telefon: 01011100021</p>
-            <p class="ml-5"> Telefax: 01011100022</p>
-            <p class="ml-5"> E-Mail: impressum@dhbw.de</p>
+            <p class="ml-5">Telefon: 0159 03082121</p>
+            <p class="ml-5"> E-Mail: samuelhilpert@web.de</p>
             <br>
             <h1 class="text-lg ml-5 font-bold">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h1>
-            <p class="ml-5">Samuel Hilpert, Coblitzalle 1-9, 68163 Mannheim</p><br>
+            <p class="ml-5">Samuel Hilpert, S1 16, 68161 Mannheim</p><br>
             <h1 class="text-lg ml-5 font-bold"> Quelle</h1>
             <p class="ml-5 mb-5">https://www.e-recht24.de</p>
 

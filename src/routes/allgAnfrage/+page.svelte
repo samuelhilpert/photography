@@ -62,8 +62,8 @@
     }
 
     function updateTest() {
-        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten. Hier sind die Details: Der Kunde wünscht sich "${textareaContent1}". Er stellst dich vor, dass "${textareaContent}"
-         Kontakdaten: Email: ${getmail1} Datum: ${getdate1} Anmerkungen: ${getanmerkungen}`;
+        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten.\nHier sind die Details:\nDer Kunde wünscht sich "${textareaContent1}".\nEr stellst dich vor, dass "${textareaContent}"
+         \nKontaktdaten:\nName: ${getvor}  ${getnach}\nEmail: ${getmail1} \nDatum: ${getdate1} \nAnmerkungen: ${getanmerkungen}`;
     }
 
 //Funktionen zum Senden der Daten an die Mail und die Datenbank
@@ -197,23 +197,17 @@
     </div>
 
     <!-- Formular zum Senden der Mail -->
-    <div class="wrapper">
-        <fieldset>
-            <legend class="invisible">Send Emails</legend>
+    <div class="wrapper hidden">
             <form class="container" method="POST">
-                <button class="text-accent invisible" id="sendmail2" type="submit">Send</button>
+                <button class="text-accent" id="sendmail2" type="submit">Send</button>
                 <div>
-                    <div class="input invisible">
-                        <label for="">To:</label>
+                    <div class="input">
                         <input name="to" type="email" value="samuelhilpert@web.de"/>
                     </div>
-                    <div class="input invisible">
-                        <label for="">Subject:</label>
+                    <div class="input">
                         <input name="subject" type="text" value="Du hast eine neue Anfrage: Allgemeine Anfrage"/>
                     </div>
-                    <div class="input invisible">
-                        <label for="">Body:</label>
-
+                    <div class="input">
                         <textarea name="body" rows="6" value="{test}"/>
 
                     </div>
@@ -222,7 +216,7 @@
 
             </form>
 
-        </fieldset>
+
     </div>
 
 

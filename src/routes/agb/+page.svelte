@@ -549,7 +549,7 @@
             <p style="font-size: 18px;">
                 <span  style="font-size: 18px;">
                     <span style="font-weight: bold;">11.11</span>
-                    Bei Veröffentlichungen wird der Kunde SaSv-Photography in branchenüblicher Form als Urheber benennen. Bei Veröffentlichungen wird der Kunde SaSv-Photography wie folgt als Urheber benennen: SaSv-Photography - www.SaSv-Photography.de
+                    Bei Veröffentlichungen wird der Kunde SaSv-Photography in branchenüblicher Form als Urheber benennen. Bei Veröffentlichungen wird der Kunde SaSv-Photography wie folgt als Urheber benennen: SaSv-Photography - www.sasv-hhotography.tech
                 </span>
             </p>
             <p style="font-size: 18px;">
