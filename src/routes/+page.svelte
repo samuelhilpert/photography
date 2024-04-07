@@ -62,11 +62,12 @@
                     <div class="textAuto"> Menschen</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
-                <button class="kategorieBezeichnung" on:click={handleHundClick}>
+                <button class="kategorieBezeichnung"  on:click={handleHundClick}>
                     <Gallery items={imgHund}/>
                     <div class="textAuto"> Hunde</div>
                     <div class="textAutoU"> Mehr erfahren!</div>
                 </button>
+                
             </Gallery>
         </div>
     </div>
@@ -102,18 +103,17 @@
         left: 63%; /* Horizontal zentrieren */
         transform: translate(-50%, -50%); /* Zentrierung anpassen */
         font-size: 50px;
-        /* Weitere Stile nach Bedarf */
     }
 
     /**Dynamischer Text über den Kategoriebildern*/
 
     .textAuto {
-        @apply relative -translate-y-64 text-2xl font-semibold text-text;
+        @apply relative -translate-y-64 text-2xl font-semibold text-text z-40;
         opacity: 0;
     }
 
     .textAutoU {
-        @apply relative -translate-y-64 text-base text-text;
+        @apply relative -translate-y-64 text-base text-text z-40;
         opacity: 0;
     }
 
@@ -129,6 +129,6 @@
     }
   
     .kategorieBezeichnung {
-        @apply hover:grayscale hover:brightness-75;
+        @apply z-0 hover:grayscale hover:brightness-75;
     }
 </style>

@@ -7,7 +7,7 @@
   
   <Footer footerType="logo" class="bg-secondary w-full overflow-hidden">
     <div class=" sm:flex sm:items-center sm:justify-between">
-      <FooterBrand href="/+page" src={logo} alt="logo"/>
+      <FooterBrand href="/" src={logo} alt="logo"/>
       <FooterLinkGroup ulClass="flex flex-wrap items-center mb-6 text-sm text-text sm:mb-0 dark:text-text h-1/6">
         <FooterLink href="/">Portfolio</FooterLink>
         <FooterLink href="/impressum">Impressum</FooterLink>

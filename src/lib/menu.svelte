@@ -32,7 +32,7 @@
             </a>
         </MegaMenu>
         <NavLi class="text-text hover:text-accent " href="/overviewAnfrage">Anfragen</NavLi>
-        <NavLi class="text-text hover:text-accent " href="/impre">Impressum</NavLi>
+        <NavLi class="text-text hover:text-accent " href="/impre">Info</NavLi>
     </NavUl>
 
   </Navbar>
