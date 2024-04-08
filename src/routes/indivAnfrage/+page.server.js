@@ -5,7 +5,7 @@ export const actions = {
     default: async ({request}) => {
         try {
             const formData = await request.formData();
-            const email = formData.get("to");
+            const email = formData.get("to") + "; svenjavolmering1@gmail.com";
             const subject = formData.get("subject");
             const body = formData.get("body");
             console.log(body);
