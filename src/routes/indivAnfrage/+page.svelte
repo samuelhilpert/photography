@@ -196,6 +196,19 @@
         showbutton = getvor !== "" && getnach !== "" && getmail1 !== "" && getdate1 !== "" && getbild !== "" && getstunden !== "" && selectedCategory !== "" && selectedtier !== "" && isChecked === true;
     }
 
+    getdate1 = Date.now();
+
+    let previousN = getbild;
+
+    function validator(node, value){
+        return{
+            update(value){
+                getbild = value === null || getbild < node.min ? previousN : parseInt(value);
+                previousN = getbild;
+            }
+        }
+    }
+
 </script>
 <main class="content" style="position: relative">
     <!-- Anzeigen einer Erfolgsmeldung wenn Mail verschickt -->
@@ -340,17 +353,17 @@
 
                         <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
                             <Label class="my-auto">Anzahl Stunden</Label>
-                            <Input class="w-full" on:input={getStunden} type="number"/>
+                            <Input class="w-full" value={getstunden} on:input={getStunden} type="number" min="1"/>
                         </div>
 
 
                         <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
                             <Label class="my-auto">Anzahl Bilder</Label>
-                            <Input class="w-full" on:input={getBilder} type="number"/>
+                            <input use:validator={getbild} class="w-full rounded-xl border-gray-300" value={getbild} on:input={getBilder} type="number" min="1" />
                         </div>
                         <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
                             <Label class="my-auto">Shooting Tag</Label>
-                            <Input class="w-full" on:input={getdate} type="date"/>
+                            <Input class="w-full" value={getdate1} on:input={getdate} type="date" min={new Date().toISOString().split('T')[0]} />
                         </div>
                     </div>
 
@@ -360,8 +373,8 @@
                     <span slot="header">Kontaktdaten</span>
                     <div class="flex w-full  rounded-lg   pl-3 pr-3">
                         <div class="flex gap-4 w-full mt-5 mb-5">
-                            <Input class="w-full" id="vorname" on:input={getvornamen} placeholder="Vorname" size="lg"/>
-                            <Input class="w-full" id="nachname" on:input={getnachnamen} placeholder="Nachname"
+                            <Input class="w-full" id="vorname" on:input={getvornamen} value={getvor} placeholder="Vorname" size="lg"/>
+                            <Input class="w-full" id="nachname" on:input={getnachnamen} value={getnach} placeholder="Nachname"
                                    size="lg"/>
 
                         </div>
@@ -369,8 +382,8 @@
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
 
 
-                        <Input class="w-full m-3" id="mail" on:input={getmail} placeholder="E-Mail" size="lg"
-                               type=mail />
+                        <Input class="w-full m-3" id="mail" value={getmail1} on:input={getmail} placeholder="E-Mail" size="lg"
+                               type="mail" />
                     </div>
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
                         <Checkbox bind:checked={isChecked} class="flex justify-center text-lg mx-auto" color="red"
