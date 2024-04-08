@@ -12,7 +12,7 @@
         border-right: 70vmax solid transparent;
         border-top: 45vw solid #2f2f38;
         position: absolute;
-        top: 14%;
+        top: 16%;
 
     }
 

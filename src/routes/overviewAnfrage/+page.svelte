@@ -45,5 +45,5 @@
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../">zurück</Button>
 
     </div>
-    <div class="h-96"></div>
+
 </main>

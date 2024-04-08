@@ -62,11 +62,11 @@
     }
 
     function updateTest() {
-        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten. Hier sind die Details: Der Kunde wünscht sich "${textareaContent1}". Er stellst dich vor, dass "${textareaContent}"
-         Kontakdaten: Email: ${getmail1} Datum: ${getdate1} Anmerkungen: ${getanmerkungen}`;
+        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten.\nHier sind die Details:\nDer Kunde wünscht sich "${textareaContent1}".\nEr stellst dich vor, dass "${textareaContent}"
+         \nKontaktdaten:\nName: ${getvor}  ${getnach}\nEmail: ${getmail1} \nDatum: ${getdate1} \nAnmerkungen: ${getanmerkungen}`;
     }
 
-//Funktionen zum Senden der Daten an die Mail und die Datenbank
+    //Funktionen zum Senden der Daten an die Mail und die Datenbank
     function handleClick1() {
         sendData();
         setTimeout(sendMail, 1000);
@@ -119,7 +119,7 @@
 </script>
 <main class="content" style="position: relative">
 
-<!-- Alert, der angezeigt wird, wenn die Anfrage erfolgreich übermittelt wurde -->
+    <!-- Alert, der angezeigt wird, wenn die Anfrage erfolgreich übermittelt wurde -->
     {#if form?.success}
         <Alert color="dark" dismissable>
             <InfoCircleSolid slot="icon" class="w-4 h-4"/>
@@ -179,8 +179,11 @@
             </div>
             <!-- Checkbox für die Einwilligung zur Datenverarbeitung -->
             <Checkbox bind:checked={isChecked} class="flex justify-center text-lg" color="red"
-                      on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der Datenschutzerklärung ein.
+                      on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der&nbsp<a class="font-bold"
+                                                                                                      href="../datenschutz">Datenschutzerklärung</a>&nbspein.
             </Checkbox>
+            <p class="flex justify-center text-lg">Mit dem Abschicken der Anfrage stimme ich den&nbsp<a
+                    class="font-bold" href="../agb">AGB</a>&nbspzu. </p>
         </div>
 
     </div>
@@ -197,32 +200,26 @@
     </div>
 
     <!-- Formular zum Senden der Mail -->
-    <div class="wrapper">
-        <fieldset>
-            <legend class="invisible">Send Emails</legend>
-            <form class="container" method="POST">
-                <button class="text-accent invisible" id="sendmail2" type="submit">Send</button>
-                <div>
-                    <div class="input invisible">
-                        <label for="">To:</label>
-                        <input name="to" type="email" value="samuelhilpert@web.de"/>
-                    </div>
-                    <div class="input invisible">
-                        <label for="">Subject:</label>
-                        <input name="subject" type="text" value="Du hast eine neue Anfrage: Allgemeine Anfrage"/>
-                    </div>
-                    <div class="input invisible">
-                        <label for="">Body:</label>
-
-                        <textarea name="body" rows="6" value="{test}"/>
-
-                    </div>
+    <div class="wrapper hidden">
+        <form class="container" method="POST">
+            <button class="text-accent" id="sendmail2" type="submit">Send</button>
+            <div>
+                <div class="input">
+                    <input name="to" type="email" value="samuelhilpert@web.de"/>
                 </div>
+                <div class="input">
+                    <input name="subject" type="text" value="Du hast eine neue Anfrage: Allgemeine Anfrage"/>
+                </div>
+                <div class="input">
+                    <textarea name="body" rows="6" value="{test}"/>
+
+                </div>
+            </div>
 
 
-            </form>
+        </form>
 
-        </fieldset>
+
     </div>
 
 

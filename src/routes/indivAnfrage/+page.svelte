@@ -2,16 +2,16 @@
 
     // import von Bildern und flowbite svelte components
     import auto from "$lib/img/1709463717041.jpg";
-    import pferd from "$lib/img/img.png";
-    import mensch from "$lib/img/img_1.png";
-    import pferdbewegung from "$lib/img/IMG_1462.png";
-    import hundportrait from "$lib/img/img_2.png";
+    import pferd from "$lib/img/img.jpg";
+    import mensch from "$lib/img/img_1.jpg";
+    import pferdbewegung from "$lib/img/IMG_1462.jpg";
+    import hundportrait from "$lib/img/img_2.jpg";
     import pferdmensch from "$lib/img/IMG_5141-Edit.jpg";
-    import carinmovement from "$lib/img/carinmove.jpeg";
-    import porsche from "$lib/img/porsche.jpeg";
-    import theke from "$lib/img/theke.jpeg";
-    import natur from "$lib/img/natur.jpeg";
-    import streetstyle from "$lib/img/streetstyle.jpeg";
+    import carinmovement from "$lib/img/carinmove.jpg";
+    import porsche from "$lib/img/porsche.jpg";
+    import theke from "$lib/img/theke.jpg";
+    import natur from "$lib/img/natur.jpg";
+    import streetstyle from "$lib/img/streetstyle.jpg";
     import {Accordion, AccordionItem, Alert, Button, Checkbox, Input, Label, Radio} from "flowbite-svelte";
     import {InfoCircleSolid} from "flowbite-svelte-icons";
 
@@ -74,7 +74,7 @@
     }
 
     function updateTest() {
-        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten. Hier sind die Details: Der Kunde wünscht sich ein Shooting mit einem ${selectedCategory}. Die gewünschte Bildart ist ${selectedtier}. Der Kunde wünscht sich ${getbild} Bilder und will ${getstunden} Stunden shooten. Der Kunde kann am ${getdate1} das Shooting durchführen und seine Mail-Adresse lautet ${getmail1}.`;
+        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten.\n\nHier sind die Details: \nDer Kunde wünscht sich ein Shooting mit einem ${selectedCategory}.\nDie gewünschte Bildart ist ${selectedtier}.\nDer Kunde wünscht sich ${getbild} Bilder und will ${getstunden} Stunden shooten.\nDer Kunde kann am ${getdate1} das Shooting durchführen und seine Mail-Adresse lautet ${getmail1}.`;
     }
 
 
@@ -373,11 +373,13 @@
                                type=mail />
                     </div>
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
-                        <Checkbox bind:checked={isChecked} class="flex justify-center text-lg" color="red"
-                                  on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der
-                            Datenschutzerklärung ein.
+                        <Checkbox bind:checked={isChecked} class="flex justify-center text-lg mx-auto" color="red"
+                                  on:change={onCheckboxChange}>Ich willige der Datenverarbeitung gemäß der&nbsp<a
+                                class="font-bold" href="../datenschutz">Datenschutzerklärung</a>&nbspein.
                         </Checkbox>
                     </div>
+                    <p class="flex justify-center text-lg text-background">Mit dem Abschicken der Anfrage stimme ich
+                        den&nbsp<a class="font-bold" href="../agb">AGB</a>&nbspzu. </p>
                 </AccordionItem>
             </Accordion>
 
@@ -404,30 +406,22 @@
     </div>
 
     <!-- Formular zum Senden der Mail -->
-    <div class="wrapper">
-        <fieldset>
-            <legend class="invisible">Send Emails</legend>
-            <form class="container" method="POST">
-                <button class="text-accent invisible" id="sendmail1" type="submit">Send</button>
-                <div>
-                    <div class="input invisible">
-                        <label for="">To:</label>
-                        <input name="to" type="email" value="samuelhilpert@web.de"/>
-                    </div>
-                    <div class="input invisible">
-                        <label for="">Subject:</label>
-                        <input name="subject" type="text" value="Du hast eine neue Anfrage: Individuelle Anfrage"/>
-                    </div>
-                    <div class="input invisible">
-                        <label for="">Body:</label>
-                        <textarea name="body" rows="6" value="{test}"/>
-                    </div>
+    <div class="wrapper hidden">
+        <form class="container" method="POST">
+            <button class="text-accent hidden" id="sendmail1" type="submit">Send</button>
+            <div>
+                <div class="input">
+                    <input name="to" type="email" value="samuelhilpert@web.de"/>
                 </div>
+                <div class="input">
+                    <input name="subject" type="text" value="Du hast eine neue Anfrage: Individuelle Anfrage"/>
+                </div>
+                <div class="input">
+                    <textarea name="body" rows="6" value="{test}"/>
+                </div>
+            </div>
 
-
-            </form>
-
-        </fieldset>
+        </form>
     </div>
 
 </main>
