@@ -4,7 +4,7 @@
 </script>
 
 <main class="content" style="position: relative">
-   <!-- Überschrift -->
+    <!-- Überschrift -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
             <h1 class="text-5xl text-text">Datenschutz</h1>
@@ -71,6 +71,9 @@
                 <p>Microsoft Corporation</p>
                 <p>One Microsoft Way Redmond, WA 98052-6399 USA</p>
                 <br>
+                <p>Vercel Inc.</p>
+                <p>340 S Lemon Ave #4133 Walnut, CA 91789 USA</p>
+                <br>
                 <h1 class="font-bold text-lg">3. Allgemeine Hinweise und Pflichtinformationen</h1>
                 <h2 class="font-bold">Datenschutz</h2>
                 <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre
@@ -85,10 +88,11 @@
                     nicht möglich.</p>
                 <br>
                 <h2 class="font-bold">Hinweis zur verantwortlichen Stelle</h2>
-                <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist: Svenja Volmering</p>
-                <p>Coblitzallee 1-9 68163 Mannheim</p>
-                <p>Telefon: [Telefonnummer der verantwortlichen Stelle]</p>
-                <p>E-Mail: [E-Mail-Adresse der verantwortlichen Stelle]</p>
+                <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist: </p>
+                <p>Samuel Hilpert</p>
+                <p>S1 16 68161 Mannheim</p>
+                <p>Telefon: 0159 03082121</p>
+                <p>E-Mail: samuelhilpert@web.de</p>
                 <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit
                     anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen,
                     E-Mail-Adressen o. Ä.) entscheidet.</p>
@@ -136,21 +140,23 @@
                 <br>
                 <h2 class="font-bold">Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen
                     Direktwerbung (Art. 21 DSGVO)</h2>
-                <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE
-                    JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE
-                    VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE
-                    BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG
-                    BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE
-                    BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE
-                    SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN
-                    ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON
-                    RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).</p>
-                <p>WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS
-                    RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM
-                    ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER
-                    DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN
-                    ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2
-                    DSGVO).</p>
+                <p>Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 Lit. E oder F DSGVO erfolgt, haben Sie
+                    jederzeit das Recht, aus Gründen, die sich aus ihrer besonderen Situation ergeben, gegen die
+                    Verarbeitung ihrer personenbezogenen Daten Widerspruch einzulegen; dies gilt auch für ein auf diese
+                    Bestimmungen gestütztes Profiling. Die jeweilige Rechtsgrundlage, auf denen eine Verarbeitung
+                    beruht, entnehmen sie dieser Datenschutzerklärung. Wenn sie Widerspruch einlegen, werden wir ihre
+                    betroffenen personenbezogenen Daten nicht mehr verarbeiten, es sei denn, wir können zwingende
+                    schutzwürdige Gründe für die Verarbeitung nachweisen, die ihre Interessen, Rechte und Freiheiten
+                    überwiegen oder die Verarbeitung dient der Geltendmachung, Ausübung oder verteidigung von
+                    Rechtsansprüchen (Widerspruch nach Art. 21 Abs. 1 DSGVO).
+                </p>
+                <p>Werden ihre personenbezogenen Daten verarbeitet, um Direktwerbung zu betreiben, so haben Sie das
+                    Recht, jederzeit Widerspruch gegen die Verarbeitung sie betreffender personenbezogener Daten zum
+                    Zwecke derartiger Werbung einzulegen; dies gilt auch für das Profiling, soweit es mit solcher
+                    Direktwerbung in Verbindung steht. Wenn sie widersprechen, werden ihre personenbezogenen Daten
+                    anschließend nicht mehr zum Zwecke der Direktwerbung verwendet (Widerspruch nach Art. 21 Abs. 2
+                    DSGVO).
+                </p>
                 <br>
                 <h2 class="font-bold">Beschwerderecht bei der zuständigen Aufsichtsbehörde</h2>
                 <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer
@@ -274,6 +280,7 @@
                     Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter
                     folgendem Link: https://www.dataprivacyframework.gov/s/participant-search/participant-
                     detail?contact=true&id=a2zt0000000GnywAAC&status=Active</p>
+                <br>
                 <p>Quelle:</p>
                 <p>https://www.e-recht24.de</p></div>
         </div>

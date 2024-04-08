@@ -16,7 +16,7 @@
     </div>
 
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
-       <!-- Impressum Box-->
+        <!-- Impressum Box-->
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={impress}/>
             <a class="font-bold" href="/impressum">Impressum</a>
@@ -38,18 +38,24 @@
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <img alt='banner' class="h-24 rounded-lg mx-auto" src={contact}/>
             <p class="font-bold">Hi!</p>
-            <p>Herzlich Willkommen auf dieser Webseite. Wir sind Svenja und Samuel und studieren aktuell im 4. Semester.
+            <p>Herzlich Willkommen auf dieser Webseite. Wir sind Svenja und Samuel und studieren aktuell im 4. Semester
+                Wirtschaftsinformatik an der Dualen Hochschule Baden-Württemberg am Standort Mannheim.
                 Diese Webseite wurde für ein Projekt an der Dualen Hochschule Baden-Württemberg entworfen und erstellt.
                 Es handelt sich um keine echtes Portfolio. Es kann kein wirklicher Fotograf angefragt werden.</p>
             <p>Bei Anfrage, Fehlerreporting oder Supportanfragen melden sie sich bitte unter den bekannten
                 Mail-Adressen. Leider kann eine Bearbeitungszeit unter 1 Woche nicht gewährleistet werden.</p>
+            <p>Hier gelangst du sofort zu unserem Social Media: <a class="italic"
+                    href="https://www.instagram.com/svenja.vlg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Svenja</a>,&nbsp;<a
+                    class="italic" href="https://www.instagram.com/samhil03/">Samuel</a></p>
         </div>
     </div>
     <!-- AGB Box-->
     <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <a class="font-bold" href="/agb">Allgemeine Geschäftsbedinungen</a>
-            <p>Über den Link in der Überschrift gelangst du direkt zu unseren Allgemeinen Geschäftsbedingungen, die du dir auf jeden Fall durchlesen wirst und diesen sowieso zustimmst, egal ob du eine Waschmaschine kaufst oder nicht.</p>
+            <p>Über den Link in der Überschrift gelangst du direkt zu unseren Allgemeinen Geschäftsbedingungen, die du
+                dir auf jeden Fall durchlesen wirst und diesen sowieso zustimmst, egal ob du eine Waschmaschine kaufst
+                oder nicht.</p>
         </div>
     </div>
 
