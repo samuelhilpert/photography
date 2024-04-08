@@ -163,13 +163,13 @@
                 <div class="flex gap-4 w-full mt-5 mb-5">
                     <Input class="w-full" id="vorname" on:input={getvornamen} placeholder="Vorname" size="lg"/>
                     <Input class="w-full" id="nachname" on:input={getnachnamen} placeholder="Nachname" size="lg"/>
-                    <Input class="w-full" on:input={getdate} type="date"/>
+                    <Input class="w-full" on:input={getdate} type="date" min={new Date().toISOString().split('T')[0]} />
                 </div>
             </div>
             <div class="flex w-full  rounded-lg pl-3 pr-3">
                 <div class="flex gap-4 w-full mt-5 mb-5">
                     <Input class="w-full" id="mail" on:input={getmail} placeholder="Mailadresse" size="lg"
-                           type="email"/>
+                           type="email" />
                 </div>
             </div>
             <div class="flex w-full  rounded-lg pl-3 pr-3">

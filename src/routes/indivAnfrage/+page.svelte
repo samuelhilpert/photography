@@ -383,7 +383,7 @@
 
 
                         <Input class="w-full m-3" id="mail" value={getmail1} on:input={getmail} placeholder="E-Mail" size="lg"
-                               type=mail />
+                               type="mail" />
                     </div>
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
                         <Checkbox bind:checked={isChecked} class="flex justify-center text-lg mx-auto" color="red"
