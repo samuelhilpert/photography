@@ -2,16 +2,16 @@
 
     // import von Bildern und flowbite svelte components
     import auto from "$lib/img/1709463717041.jpg";
-    import pferd from "$lib/img/img.png";
-    import mensch from "$lib/img/img_1.png";
-    import pferdbewegung from "$lib/img/IMG_1462.png";
-    import hundportrait from "$lib/img/img_2.png";
+    import pferd from "$lib/img/img.jpg";
+    import mensch from "$lib/img/img_1.jpg";
+    import pferdbewegung from "$lib/img/IMG_1462.jpg";
+    import hundportrait from "$lib/img/img_2.jpg";
     import pferdmensch from "$lib/img/IMG_5141-Edit.jpg";
-    import carinmovement from "$lib/img/carinmove.jpeg";
-    import porsche from "$lib/img/porsche.jpeg";
-    import theke from "$lib/img/theke.jpeg";
-    import natur from "$lib/img/natur.jpeg";
-    import streetstyle from "$lib/img/streetstyle.jpeg";
+    import carinmovement from "$lib/img/carinmove.jpg";
+    import porsche from "$lib/img/porsche.jpg";
+    import theke from "$lib/img/theke.jpg";
+    import natur from "$lib/img/natur.jpg";
+    import streetstyle from "$lib/img/streetstyle.jpg";
     import {Accordion, AccordionItem, Alert, Button, Checkbox, Input, Label, Radio} from "flowbite-svelte";
     import {InfoCircleSolid} from "flowbite-svelte-icons";
 

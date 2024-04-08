@@ -13,7 +13,7 @@
     import auto9 from '$lib/img/autos/IMG_9698.jpg';
     import auto10 from '$lib/img/autos/IMG_9807.jpg';
     import auto12 from '$lib/img/autos/1709463717041.jpg';
-    import auto13 from '$lib/img/autos/1709463776881.jpg';
+    import auto13 from '$lib/img/autos/1709463717031.jpg';
     import auto14 from '$lib/img/autos/1709463776910.jpg';
     import auto15 from '$lib/img/autos/IMG_9823.jpg';
     import auto16 from '$lib/img/autos/IMG_9661.jpg';
