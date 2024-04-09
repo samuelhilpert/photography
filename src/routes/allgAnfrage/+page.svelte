@@ -6,69 +6,71 @@
     export let form;
 
     // Variablen für die Eingabefelder
-    let textareaContent = "";
-    let getvor = "";
-    let getnach = "";
-    let textareaContent1 = "";
-    let getmail1 = "";
-    let getdate1 = "";
-    let getanmerkungen = "";
-    let test = "";
-    let showbutton = false;
+    let vorstellungen = "";
+    let vornamen = "";
+    let nachnamen = "";
+    let wunsche = "";
+    let mailAdresse = "";
+    let shootingDate = "";
+    let anmerkungen = "";
+    let mailText = "";
+    let showButton = false;
     let isChecked = false;
 
 
     //Funktionen zum Aktualisieren der Variablen
-    function inhaltarea2(event) {
-        textareaContent1 = event.target.value;
-        updateTest();
-        checkall();
+    function getWunsche(event) {
+        wunsche = event.target.value;
+        updateMailText();
+        checkPflichtfelder();
     }
 
-    function inhaltarea1(event) {
-        textareaContent = event.target.value;
-        updateTest();
-        checkall();
+    function getVorstellungen(event) {
+        vorstellungen = event.target.value;
+        updateMailText();
+        checkPflichtfelder();
     }
 
-    function getvornamen(event) {
-        getvor = event.target.value;
-        updateTest();
-        checkall();
+    function getVornamen(event) {
+        vornamen = event.target.value;
+        updateMailText();
+        checkPflichtfelder();
     }
 
-    function getnachnamen(event) {
-        getnach = event.target.value;
-        updateTest();
-        checkall();
+    function getNachnamen(event) {
+        nachnamen = event.target.value;
+        updateMailText();
+        checkPflichtfelder();
     }
 
-    function getmail(event) {
-        getmail1 = event.target.value;
-        updateTest();
-        checkall();
+    function getMail(event) {
+        mailAdresse = event.target.value;
+        updateMailText();
+        checkPflichtfelder();
     }
 
-    function getdate(event) {
-        getdate1 = event.target.value;
-        updateTest();
-        checkall();
+    function getShootingDate(event) {
+        shootingDate = event.target.value;
+        updateMailText();
+        checkPflichtfelder();
     }
 
-    function anmerkungen(event) {
-        getanmerkungen = event.target.value;
-        updateTest();
-        checkall();
+    function getAnmerkungen(event) {
+        anmerkungen = event.target.value;
+        updateMailText();
+        checkPflichtfelder();
     }
 
-    function updateTest() {
-        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten.\nHier sind die Details:\nDer Kunde wünscht sich "${textareaContent1}".\nEr stellst dich vor, dass "${textareaContent}"
-         \nKontaktdaten:\nName: ${getvor}  ${getnach}\nEmail: ${getmail1} \nDatum: ${getdate1} \nAnmerkungen: ${getanmerkungen}`;
+    function updateMailText() {
+        mailText = `Du hast eine neue Anfrage von ${vornamen} ${nachnamen} erhalten.\nHier sind die Details:\nDer Kunde wünscht sich "${wunsche}".\nEr stellst dich vor, dass "${vorstellungen}"
+         \nKontaktdaten:\nName: ${vornamen}  ${nachnamen}\nEmail: ${mailAdresse} \nDatum: ${shootingDate} \nAnmerkungen: ${anmerkungen}`;
     }
+
+    shootingDate = new Date().toISOString().split('T')[0];
 
     //Funktionen zum Senden der Daten an die Mail und die Datenbank
-    function handleClick1() {
-        sendData();
+    function sendeDatenUndMail() {
+        sendAllgemeineAnfrage();
         setTimeout(sendMail, 1000);
 
     }
@@ -79,7 +81,7 @@
     }
 
     //Funktion zum Senden der Daten an die Datenbank
-    async function sendData() {
+    async function sendAllgemeineAnfrage() {
 
 
         const API_URL = "https://sasvserver.azurewebsites.net/InsertAllgemeineAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
@@ -89,13 +91,13 @@
 
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                vorname: getvor,
-                nachname: getnach,
-                tag: getdate1,
-                wuensche: textareaContent1,
-                vorstellungen: textareaContent,
-                mail: getmail1,
-                anmerkungen: getanmerkungen,
+                vorname: vornamen,
+                nachname: nachnamen,
+                tag: shootingDate,
+                wuensche: wunsche,
+                vorstellungen: vorstellungen,
+                mail: mailAdresse,
+                anmerkungen: anmerkungen,
             }),
 
         });
@@ -106,14 +108,15 @@
     //Funktion zum Aktualisieren, wenn sich eine Checkbox ändert
     function onCheckboxChange(event) {
         isChecked = event.target.checked;
-        checkall();
+        checkPflichtfelder();
 
     }
 
     //Funktion zum Überprüfen, ob alle Felder ausgefüllt sind
-    function checkall() {
-        showbutton = textareaContent !== "" && textareaContent1 !== "" && getvor !== "" && getnach !== "" && getmail1 !== "" && getdate1 !== "" && isChecked === true;
+    function checkPflichtfelder() {
+        showButton = vorstellungen !== "" && wunsche !== "" && vornamen !== "" && nachnamen !== "" && mailAdresse !== "" && shootingDate !== "" && isChecked === true;
     }
+
 
 
 </script>
@@ -146,7 +149,7 @@
             <p class=" ml-5 text-background mt-5 text-xl">Was wünscht du dir ?</p>
             <div class="flex w-full  rounded-lg pl-3 pr-3">
                 <div class="flex flex-row gap-4 w-full mt-5 mb-5">
-                    <Textarea id="beschreibung" on:input={inhaltarea2}
+                    <Textarea id="beschreibung" on:input={getWunsche}
                               placeholder="Beschreibe hier kurz, was fotografiert werden soll" rows="4"/>
 
                 </div>
@@ -154,27 +157,27 @@
             <p class="text-background ml-5 mt-2 text-xl">Was stellst du dir darunter vor ?</p>
             <div class="flex w-full rounded-lg pl-3 pr-3">
                 <div class="flex flex-row gap-4 w-full mt-5 mb-5">
-                    <Textarea id="beschreibung" on:input={inhaltarea1}
+                    <Textarea id="beschreibung" on:input={getVorstellungen}
                               placeholder="Beschreibe hier kurz, wie die Fotos aussehen sollen" rows="4"/>
                 </div>
             </div>
             <p class="text-background ml-5 mt-2 text-xl">Kontaktdaten</p>
             <div class="flex w-full  rounded-lg   pl-3 pr-3">
                 <div class="flex gap-4 w-full mt-5 mb-5">
-                    <Input class="w-full" id="vorname" on:input={getvornamen} placeholder="Vorname" size="lg"/>
-                    <Input class="w-full" id="nachname" on:input={getnachnamen} placeholder="Nachname" size="lg"/>
-                    <Input class="w-full" on:input={getdate} type="date" min={new Date().toISOString().split('T')[0]} />
+                    <Input class="w-full" id="vorname" on:input={getVornamen} placeholder="Vorname" size="lg"/>
+                    <Input class="w-full" id="nachname" on:input={getNachnamen} placeholder="Nachname" size="lg"/>
+                    <Input class="w-full" on:input={getShootingDate} type="date" min={new Date().toISOString().split('T')[0]} />
                 </div>
             </div>
             <div class="flex w-full  rounded-lg pl-3 pr-3">
                 <div class="flex gap-4 w-full mt-5 mb-5">
-                    <Input class="w-full" id="mail" on:input={getmail} placeholder="Mailadresse" size="lg"
+                    <Input class="w-full" id="mail" on:input={getMail} placeholder="Mailadresse" size="lg"
                            type="email" />
                 </div>
             </div>
             <div class="flex w-full  rounded-lg pl-3 pr-3">
                 <div class="flex flex-row gap-4 w-full mt-5 mb-5">
-                    <Textarea id="beschreibung" on:input={anmerkungen} placeholder="weitere Anmerkungen" rows="4"/>
+                    <Textarea id="beschreibung" on:input={getAnmerkungen} placeholder="weitere Anmerkungen" rows="4"/>
                 </div>
             </div>
             <!-- Checkbox für die Einwilligung zur Datenverarbeitung -->
@@ -191,8 +194,8 @@
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-5">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück
         </Button>
-        {#if showbutton}
-            <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={handleClick1}>
+        {#if showButton}
+            <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={sendeDatenUndMail}>
                 Anfrage senden
             </Button>
         {/if}
@@ -211,7 +214,7 @@
                     <input name="subject" type="text" value="Du hast eine neue Anfrage: Allgemeine Anfrage"/>
                 </div>
                 <div class="input">
-                    <textarea name="body" rows="6" value="{test}"/>
+                    <textarea name="body" rows="6" value="{mailText}"/>
 
                 </div>
             </div>

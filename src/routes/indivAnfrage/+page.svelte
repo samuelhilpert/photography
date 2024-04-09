@@ -4,85 +4,95 @@
     import auto from "$lib/img/1709463717041.jpg";
     import pferd from "$lib/img/img.jpg";
     import mensch from "$lib/img/img_1.jpg";
-    import pferdbewegung from "$lib/img/IMG_1462.jpg";
-    import hundportrait from "$lib/img/img_2.jpg";
-    import pferdmensch from "$lib/img/IMG_5141-Edit.jpg";
-    import carinmovement from "$lib/img/carinmove.jpg";
+    import pferdBewegung from "$lib/img/IMG_1462.jpg";
+    import hundPortrait from "$lib/img/img_2.jpg";
+    import pferdMensch from "$lib/img/IMG_5141-Edit.jpg";
+    import carInMovement from "$lib/img/carinmove.jpg";
     import porsche from "$lib/img/porsche.jpg";
     import theke from "$lib/img/theke.jpg";
     import natur from "$lib/img/natur.jpg";
-    import streetstyle from "$lib/img/streetstyle.jpg";
-    import {Accordion, AccordionItem, Alert, Button, Checkbox, Input, Label, Radio} from "flowbite-svelte";
+    import streetStyle from "$lib/img/streetstyle.jpg";
+    import {Accordion, AccordionItem, Alert, Button, Checkbox, Input, Label, Radio, Drawer, CloseButton} from "flowbite-svelte";
     import {InfoCircleSolid} from "flowbite-svelte-icons";
+    import { sineIn } from 'svelte/easing';
+
+    let hidden8 = true;
+    let transitionParamsBottom = {
+        y: 320,
+        duration: 200,
+        easing: sineIn
+    };
 
     export let form;
 
 
     // erstellen von Variablen
-    let test = "";
-    let pricecalculate = "";
-    let getvor = "";
-    let getnach = "";
-    let getmail1 = "";
-    let getdate1 = "";
-    let getbild = "";
-    let getstunden = "";
-    let selectedCategory;
-    let selectedtier;
+    let mailtext = "";
+    let kalkulierterPreis = "";
+    let vorname = "";
+    let nachname = "";
+    let mailadresse = "";
+    let shootingDatum = "";
+    let anzahlBilder = "1";
+    let anzahlStunden = "1";
+    let selectedMotiv;
+    let selectedKategorie;
     let isAutoSelected = false;
     let isTierSelected = false;
     let isMenschSelected = false;
-    let showbutton = false;
+    let showButton = false;
     let isChecked = false;
+    let previousN = anzahlBilder;
+    let previousM = anzahlStunden;
 
 
     // Funktionen für Speicherung der Eingaben in den Variablen
-    function getvornamen(event) {
-        getvor = event.target.value;
-        updateTest();
-        checkall();
+    function getVornamen(event) {
+        vorname = event.target.value;
+        updateMailText();
+        checkPflichtangaben();
     }
 
-    function getnachnamen(event) {
-        getnach = event.target.value;
-        updateTest();
-        checkall();
+    function getNachnamen(event) {
+        nachname = event.target.value;
+        updateMailText();
+        checkPflichtangaben();
     }
 
-    function getmail(event) {
-        getmail1 = event.target.value;
-        updateTest();
-        checkall();
+    function getMail(event) {
+        mailadresse = event.target.value;
+        updateMailText();
+        checkPflichtangaben();
     }
 
-    function getdate(event) {
-        getdate1 = event.target.value;
-        updateTest();
-        checkall();
+    function getShootingDate(event) {
+        shootingDatum = event.target.value;
+        updateMailText();
+        checkPflichtangaben();
     }
 
     function getBilder(event) {
-        getbild = event.target.value;
-        updateTest();
-        checkall();
+        anzahlBilder = event.target.value;
+        updateMailText();
+        checkPflichtangaben();
     }
 
     function getStunden(event) {
-        getstunden = event.target.value;
-        updateTest();
-        checkall();
+        anzahlStunden = event.target.value;
+        updateMailText();
+        checkPflichtangaben();
     }
 
-    function updateTest() {
-        test = `Du hast eine neue Anfrage von ${getvor} ${getnach} erhalten.\n\nHier sind die Details: \nDer Kunde wünscht sich ein Shooting mit einem ${selectedCategory}.\nDie gewünschte Bildart ist ${selectedtier}.\nDer Kunde wünscht sich ${getbild} Bilder und will ${getstunden} Stunden shooten.\nDer Kunde kann am ${getdate1} das Shooting durchführen und seine Mail-Adresse lautet ${getmail1}.`;
+    function updateMailText() {
+        mailtext = `Du hast eine neue Anfrage von ${vorname} ${nachname} erhalten.\n\nHier sind die Details: \nDer Kunde wünscht sich ein Shooting mit einem ${selectedMotiv}.\nDie gewünschte Bildart ist ${selectedKategorie}.\nDer Kunde wünscht sich ${anzahlBilder} Bilder und will ${anzahlStunden} Stunden shooten.\nDer Kunde kann am ${shootingDatum} das Shooting durchführen und seine Mail-Adresse lautet ${mailadresse}.`;
     }
 
 
     // Funktionen für die Auswahl der Kategorie
-    function handleRadioChange(event) {
-        const selectedValue = event.target.value;
+    function handleMotivChange(event) {
+        const selectedValueRadio = event.target.value;
 
-        switch (selectedValue) {
+        switch (selectedValueRadio) {
             case 'Auto':
                 isAutoSelected = true;
                 isTierSelected = false;
@@ -106,7 +116,7 @@
     }
 
     // Funktionen zum Senden der Daten an die Datenbank
-    async function sendData1() {
+    async function sendIndividuelleAnfrage() {
 
         const API_URL = "https://sasvserver.azurewebsites.net/InsertIndividuelleAnfragen"; // Ersetzen Sie dies mit Ihrer tatsächlichen API-URL
 
@@ -115,27 +125,30 @@
 
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                vorname: getvor,
-                nachname: getnach,
-                email: getmail1,
-                kategorie: selectedCategory,
-                motiv: implodeArray(selectedtier),
-                stunden: getstunden,
-                bilder: getbild,
-                tag: getdate1,
-                kosten: pricecalculate,
+                vorname: vorname,
+                nachname: nachname,
+                email: mailadresse,
+                motiv: selectedMotiv,
+                kategorie: implodeArray(selectedKategorie),
+                stunden: anzahlStunden,
+                bilder: anzahlBilder,
+                tag: shootingDatum,
+                kosten: kalkulierterPreis,
 
             }),
 
+
         });
+
+
 
 
     }
 
     // Aufruf der Funktion zum Senden der Daten an die Datenbank
-    async function handleClick() {
+    async function AnfrageSenden() {
         await calculatePrice();
-        sendData1();
+        sendIndividuelleAnfrage();
         setTimeout(sendMail, 1000);
 
     }
@@ -156,17 +169,17 @@
 
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                category: selectedCategory,
-                motiv: selectedtier,
-                stunden: getstunden,
-                bilder: getbild,
+                category: selectedMotiv,
+                motiv: selectedKategorie,
+                stunden: anzahlStunden,
+                bilder: anzahlBilder,
 
             }),
 
 
         });
-        pricecalculate = await response.json();
-        console.log(pricecalculate);
+        kalkulierterPreis = await response.json();
+
 
 
     }
@@ -187,24 +200,34 @@
     // Funktion, die aufgerufen wird, wenn sich der Status einer Checkbox ändert
     function onCheckboxChange(event) {
         isChecked = event.target.checked;
-        checkall();
+        checkPflichtangaben();
 
     }
 
     // Funktion, die prüft, ob alle Eingaben gemacht wurden
-    function checkall() {
-        showbutton = getvor !== "" && getnach !== "" && getmail1 !== "" && getdate1 !== "" && getbild !== "" && getstunden !== "" && selectedCategory !== "" && selectedtier !== "" && isChecked === true;
+    function checkPflichtangaben() {
+        showButton = vorname !== "" && nachname !== "" && mailadresse !== "" && shootingDatum !== "" && anzahlBilder !== "" && anzahlStunden !== "" && selectedMotiv !== "" && selectedKategorie !== "" && isChecked === true;
     }
 
-    getdate1 = Date.now();
+    shootingDatum = new Date().toISOString().split('T')[0];
 
-    let previousN = getbild;
 
-    function validator(node, value){
+
+
+    function validatorBilder(nodeBilder, valueBilder){
         return{
-            update(value){
-                getbild = value === null || getbild < node.min ? previousN : parseInt(value);
-                previousN = getbild;
+            update(valueBilder){
+                anzahlBilder = valueBilder === null || anzahlBilder < nodeBilder.min ? previousN : parseInt(valueBilder);
+                previousN = anzahlBilder;
+            }
+        }
+    }
+
+    function validatorStunden(nodeStunden, valueStunden){
+        return{
+            update(valueStunden){
+                anzahlStunden = valueStunden === null || anzahlStunden < nodeStunden.min ? previousM : parseInt(valueStunden);
+                previousM = anzahlStunden;
             }
         }
     }
@@ -224,8 +247,8 @@
     <!-- Überschrift -->
     <div class="container h-full mx-auto flex justify-center items-center mt-4">
         <div class="space-y-5">
-            <h1><span class="text-5xl text-text">Deine individuelle</span> <span
-                    class="text-5xl text-accent"> Anfrage</span></h1>
+            <h1><span class="text-5xl text-text">Deine individuelle</span>  <span
+                    class="text-5xl text-accent">Anfrage</span></h1>
 
         </div>
 
@@ -243,23 +266,23 @@
 
                         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
                             <img alt='banner' class="h-40 rounded-lg mx-auto" src={auto}/>
-                            <Radio bind:group={selectedCategory} class="flex justify-center text-lg" color="red"
-                                   name="category" on:change={handleRadioChange} value="Auto">Auto
+                            <Radio bind:group={selectedMotiv} class="flex justify-center text-lg" color="red"
+                                   name="category" on:change={handleMotivChange} value="Auto">Auto
                             </Radio>
 
                         </div>
 
                         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
                             <img alt='banner' class="h-40 rounded-lg mx-auto" src={pferd}/>
-                            <Radio bind:group={selectedCategory} class="flex justify-center text-lg" color="red"
-                                   name="category" on:change={handleRadioChange} value="Tier">Tier
+                            <Radio bind:group={selectedMotiv} class="flex justify-center text-lg" color="red"
+                                   name="category" on:change={handleMotivChange} value="Tier">Tier
                             </Radio>
 
                         </div>
                         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
                             <img alt='banner' class="h-40 rounded-lg mx-auto" src={mensch}/>
-                            <Radio bind:group={selectedCategory} class="flex justify-center text-lg" color="red"
-                                   name="category" on:change={handleRadioChange} value="Mensch">Mensch
+                            <Radio bind:group={selectedMotiv} class="flex justify-center text-lg" color="red"
+                                   name="category" on:change={handleMotivChange} value="Mensch">Mensch
                             </Radio>
                         </div>
                     </div>
@@ -272,8 +295,8 @@
                         <div class="container mx-auto flex flex-row justify-content: center gap-4">
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={pferdbewegung} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <img src={pferdBewegung} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="in Bewegung">in Bewegung
                                 </Checkbox>
 
@@ -281,16 +304,16 @@
                             </div>
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={hundportrait} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <img src={hundPortrait} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="Portrait">Portrait
                                 </Checkbox>
 
 
                             </div>
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={pferdmensch} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <img src={pferdMensch} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="Portrait mit Mensch">Portrait mit Mensch
                                 </Checkbox>
 
@@ -303,22 +326,22 @@
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
                                 <img src={porsche} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="Portrait">Portrait
                                 </Checkbox>
 
                             </div>
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={carinmovement} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <img src={carInMovement} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="inBewegung">in Bewegung
                                 </Checkbox>
 
                             </div>
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
                                 <img src={theke} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="Detail">Detailaufnahme
                                 </Checkbox>
                             </div>
@@ -329,14 +352,14 @@
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
                                 <img src={natur} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="outdoor">Outdoor
                                 </Checkbox>
                             </div>
 
                             <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
-                                <img src={streetstyle} alt='banner' class="h-40 rounded-lg mx-auto"/>
-                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedtier}
+                                <img src={streetStyle} alt='banner' class="h-40 rounded-lg mx-auto"/>
+                                <Checkbox color="red" class="flex justify-center text-lg" bind:group={selectedKategorie}
                                           value="streetstyle">Street Style
                                 </Checkbox>
 
@@ -353,17 +376,17 @@
 
                         <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
                             <Label class="my-auto">Anzahl Stunden</Label>
-                            <Input class="w-full" value={getstunden} on:input={getStunden} type="number" min="1"/>
+                            <input use:validatorStunden={anzahlStunden} class="w-full rounded-xl border-gray-300" value={anzahlStunden} on:input={getStunden} type="number" min="1"/>
                         </div>
 
 
                         <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
                             <Label class="my-auto">Anzahl Bilder</Label>
-                            <input use:validator={getbild} class="w-full rounded-xl border-gray-300" value={getbild} on:input={getBilder} type="number" min="1" />
+                            <input use:validatorBilder={anzahlBilder} class="w-full rounded-xl border-gray-300" value={anzahlBilder} on:input={getBilder} type="number" min="1"  />
                         </div>
                         <div class="flex flex-row p-4 border rounded-lg shadow-md bg-text text-center">
                             <Label class="my-auto">Shooting Tag</Label>
-                            <Input class="w-full" value={getdate1} on:input={getdate} type="date" min={new Date().toISOString().split('T')[0]} />
+                            <Input class="w-full" value={shootingDatum} on:input={getShootingDate} type="date" min={new Date().toISOString().split('T')[0]} />
                         </div>
                     </div>
 
@@ -373,8 +396,8 @@
                     <span slot="header">Kontaktdaten</span>
                     <div class="flex w-full  rounded-lg   pl-3 pr-3">
                         <div class="flex gap-4 w-full mt-5 mb-5">
-                            <Input class="w-full" id="vorname" on:input={getvornamen} value={getvor} placeholder="Vorname" size="lg"/>
-                            <Input class="w-full" id="nachname" on:input={getnachnamen} value={getnach} placeholder="Nachname"
+                            <Input class="w-full" id="vorname" on:input={getVornamen} value={vorname} placeholder="Vorname" size="lg"/>
+                            <Input class="w-full" id="nachname" on:input={getNachnamen} value={nachname} placeholder="Nachname"
                                    size="lg"/>
 
                         </div>
@@ -382,7 +405,7 @@
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
 
 
-                        <Input class="w-full m-3" id="mail" value={getmail1} on:input={getmail} placeholder="E-Mail" size="lg"
+                        <Input class="w-full m-3" id="mail" value={mailadresse} on:input={getMail} placeholder="E-Mail" size="lg"
                                type="mail" />
                     </div>
                     <div class="container mx-auto flex flex-row justify-content: center gap-4">
@@ -398,7 +421,7 @@
 
             <!-- Anzeigen des Preises -->
             <div class="text-background text-center font-bold text-xl mb-1 mt-1"> Dein individuelles
-                Angebot: {pricecalculate} €
+                Angebot: {kalkulierterPreis} €
             </div>
         </div>
 
@@ -408,8 +431,8 @@
     <div class="container h-full mx-auto flex justify-center items-center mt-4 mb-10 gap-4">
         <Button class="bg-accent text-background hover:bg-text hover:text-background" href="../overviewAnfrage">zurück
         </Button>
-        {#if (showbutton)}
-            <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={handleClick}>Anfrage
+        {#if (showButton)}
+            <Button class="bg-accent text-background hover:bg-text hover:text-background" on:click={AnfrageSenden}>Anfrage
                 senden
             </Button>
         {/if}
@@ -417,6 +440,30 @@
             berechnen
         </Button>
     </div>
+
+
+    <div class="text-center mb-20">
+        <Button class="bg-secondary text-text hover:bg-accent hover:text-background" on:click={() => (hidden8 = false)}>Zeige mehr Informationen zur individuellen Anfrage</Button>
+    </div>
+
+    <Drawer placement="bottom" width="w-full" transitionType="fly" transitionParams={transitionParamsBottom} bind:hidden={hidden8} id="sidebar8">
+        <div class="flex items-center">
+            <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
+                <InfoCircleSolid class="w-4 h-4 me-2.5" />Info
+            </h5>
+            <CloseButton on:click={() => (hidden8 = true)} class="mb-4 dark:text-white" />
+        </div>
+        <p>
+            Hier kannst du eine individuelle Anfrage stellen. Wähle die Kategorie, das Motiv, den Umfang und gib deine Kontaktdaten ein. Nach dem Absenden der Anfrage erhältst du ein individuelles Angebot.</p> <p>Du kannst auch den Preis berechnen lassen, während du deine Auswahl triffst bzw. bevor du die Anfrage abschickst. Dieser Preis ist der finale Preis, sollte die Anfrage angenommen werden.
+        </p>
+        <p>Bevor du eine Abfrage abschicken kannst, musst du alle Felder ausgefüllt haben.</p>
+        <p>Es handelt sich nur um eine Anfrage und stellt noch keinen Vertrag da. Sobald ich die Anfrage annehme, schicke ich dir eine Mail mit der Bestätigung des Auftrages. Sobald du mir diese bestätigst, besteht ein Vertrag.</p>
+
+    </Drawer>
+
+
+
+
 
     <!-- Formular zum Senden der Mail -->
     <div class="wrapper hidden">
@@ -430,7 +477,7 @@
                     <input name="subject" type="text" value="Du hast eine neue Anfrage: Individuelle Anfrage"/>
                 </div>
                 <div class="input">
-                    <textarea name="body" rows="6" value="{test}"/>
+                    <textarea name="body" rows="6" value="{mailtext}"/>
                 </div>
             </div>
 
