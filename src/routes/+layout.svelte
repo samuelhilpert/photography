@@ -13,6 +13,9 @@
         border-top: 45vw solid #2f2f38;
         position: absolute;
         top: 16%;
+        @media (max-width: 768px) {
+            display: none;
+        }
 
     }
 
