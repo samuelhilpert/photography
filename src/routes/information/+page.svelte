@@ -50,7 +50,7 @@
         </div>
     </div>
     <!-- AGB Box-->
-    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4">
+    <div class="container mx-auto flex flex-row justify-content: center gap-4 pt-4" >
         <div class="flex-1 p-4 border rounded-lg shadow-md bg-text text-center">
             <a class="font-bold" href="/agb">Allgemeine Geschäftsbedinungen</a>
             <p>Über den Link in der Überschrift gelangst du direkt zu unseren Allgemeinen Geschäftsbedingungen, die du
