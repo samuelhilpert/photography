@@ -22,7 +22,7 @@
      */
 
     function handleAutoClick() {
-        window.location.assign('/autoPortfolio');
+        window.location.assign('/auto');
     }
 
     function handlePferdClick() {

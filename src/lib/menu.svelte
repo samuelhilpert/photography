@@ -5,7 +5,7 @@
     import logo from '$lib/img/Logo.jpg';
 
     let menu = [
-        {name: 'Autos', href: '/autoPortfolio'},
+        {name: 'Autos', href: '/auto'},
         {name: 'Pferde', href: '/pferd'},
         {name: 'Menschen', href: '/mensch'},
         {name: 'Hunde', href: '/hund'}
