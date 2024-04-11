@@ -13,17 +13,12 @@
         border-top: 45vw solid #2f2f38;
         position: absolute;
         top: 16%;
+        @media (max-width: 768px) {
+            display: none;
+        }
 
     }
 
-    .layout {
-        @apply flex bg-background h-full;
-
-    }
-
-    .footer {
-        @apply bottom-0 w-screen;
-    }
 
 
 

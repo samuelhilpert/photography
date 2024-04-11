@@ -5,7 +5,7 @@
     import logo from '$lib/img/Logo.jpg';
 
     let menu = [
-        {name: 'Autos', href: '/autoPortfolio'},
+        {name: 'Autos', href: '/auto'},
         {name: 'Pferde', href: '/pferd'},
         {name: 'Menschen', href: '/mensch'},
         {name: 'Hunde', href: '/hund'}
@@ -20,9 +20,9 @@
 
     </NavBrand>
     <NavHamburger on:click={toggle}/>
-    <NavUl {hidden} >
-        <NavLi class="text-text  hover:text-accent " href="/">Home</NavLi>
-        <NavLi class="cursor-pointer text-text hover:text-accent ">
+    <NavUl {hidden}  >
+        <NavLi class="text-text  hover:text-accent bg-background" href="/">Home</NavLi>
+        <NavLi class="cursor-pointer text-text hover:text-accent bg-background ">
             Portfolio
             <ChevronDownOutline class=" hover:text-accent  w-3 h-3 ms-2  text-text dark:text-text inline"/>
         </NavLi>
@@ -31,8 +31,8 @@
                 {item.name}
             </a>
         </MegaMenu>
-        <NavLi class="text-text hover:text-accent " href="/overviewAnfrage">Anfragen</NavLi>
-        <NavLi class="text-text hover:text-accent " href="/impre">Info</NavLi>
+        <NavLi class="text-text hover:text-accent bg-background" href="/overviewAnfrage">Anfragen</NavLi>
+        <NavLi class="text-text hover:text-accent bg-background" href="/information">Info</NavLi>
     </NavUl>
 
   </Navbar>

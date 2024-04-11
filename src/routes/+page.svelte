@@ -22,7 +22,7 @@
      */
 
     function handleAutoClick() {
-        window.location.assign('/autoPortfolio');
+        window.location.assign('/auto');
     }
 
     function handlePferdClick() {
@@ -77,6 +77,7 @@
     /**Platzierung des Banners*/
     /** Platzierung des Banners*/
     .banner {
+        position: relative;
         @apply justify-center rounded-lg;
         margin-top: 2%;
         margin-left: 5%;
@@ -88,20 +89,20 @@
     .text-overlay {
         position: absolute;
         @apply text-text;
-        top: 15%; /* Vertikal zentrieren */
-        left: 32%; /* Horizontal zentrieren */
+        top: 33%; /* Vertikal zentrieren */
+        left: 31%; /* Horizontal zentrieren */
         transform: translate(-50%, -50%); /* Zentrierung anpassen */
-        font-size: 100px;
+        font-size: 6.944444444444445vw;
         /* Weitere Stile nach Bedarf */
     }
 
     .text-overlay-untertitel {
         position: absolute;
         @apply font-serif text-text;
-        top: 25%; /* Vertikal zentrieren */
-        left: 63%; /* Horizontal zentrieren */
+        top: 56%; /* Vertikal zentrieren */
+        left: 65%; /* Horizontal zentrieren */
         transform: translate(-50%, -50%); /* Zentrierung anpassen */
-        font-size: 50px;
+        font-size: 3.4722222222222223vw;
     }
 
     /**Dynamischer Text über den Kategoriebildern*/

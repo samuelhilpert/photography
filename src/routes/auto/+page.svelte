@@ -49,18 +49,6 @@
 </script>
 
 <style>
-    /**Formatierung der Bilder
-    --> TODO: Anpassung! */
-    .imageContainer {
-        @apply w-screen;
-        display: flex;
-        gap: 10px;
-    }
-
-    .images {
-        max-width: 20%;
-        height: auto;
-    }
 
     /**Header Text mit Card stylen*/
     .card {
@@ -73,7 +61,7 @@
 
 
   <div class="card absolute top-20 bg-opacity-50 items-center w-1/2  rounded-full bg-secondary shadow-2xl">
-    <p class="text-5xl mt-5 text-center font-semibold text-accent"> Autofotografie</p> <br>
+    <p class="text-5xl mt-5 text-center font-semibold text-accent"> Auto </p> <br>
 </div>
 <!-- Einfügen / Abbilden der Bilder-->
   <Gallery class="gap-4 grid-cols-2 md:grid-cols-4">
