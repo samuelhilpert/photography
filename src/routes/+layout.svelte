@@ -19,14 +19,6 @@
 
     }
 
-    .layout {
-        @apply flex bg-background h-full;
-
-    }
-
-    .footer {
-        @apply bottom-0 w-screen;
-    }
 
 
 

@@ -5,7 +5,7 @@
     import logo from '$lib/img/Logo.jpg';
 
     let menu = [
-        {name: 'Autos', href: '/autoPortfolio'},
+        {name: 'Autos', href: '/auto'},
         {name: 'Pferde', href: '/pferd'},
         {name: 'Menschen', href: '/mensch'},
         {name: 'Hunde', href: '/hund'}
@@ -32,7 +32,7 @@
             </a>
         </MegaMenu>
         <NavLi class="text-text hover:text-accent bg-background" href="/overviewAnfrage">Anfragen</NavLi>
-        <NavLi class="text-text hover:text-accent bg-background" href="/impre">Info</NavLi>
+        <NavLi class="text-text hover:text-accent bg-background" href="/information">Info</NavLi>
     </NavUl>
 
   </Navbar>

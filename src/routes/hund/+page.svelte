@@ -37,17 +37,6 @@
       </script>
     
       <style>
-        /**Formatierung der Bilder
-        --> TODO: Anpassung! */
-        .imageContainer {
-            @apply w-screen;
-            display: flex;
-            gap: 10px; 
-        }
-        .images {
-            max-width: 20%;
-            height: auto;
-          }
         /**Header Text mit Card stylen*/
       .card {
         margin-left: 25%;

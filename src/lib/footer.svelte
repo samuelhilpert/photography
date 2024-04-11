@@ -14,7 +14,7 @@
         <FooterLink href="/">Portfolio</FooterLink>
         <FooterLink href="/impressum">Impressum</FooterLink>
         <FooterLink href="/datenschutz">Datenschutz</FooterLink>
-        <FooterLink href="/impre">Informationen</FooterLink>
+        <FooterLink href="/information">Informationen</FooterLink>
         <FooterBrand href="https://www.instagram.com/svenja.vlg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</FooterBrand>
 
       </FooterLinkGroup>

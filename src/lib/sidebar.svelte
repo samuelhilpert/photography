@@ -28,7 +28,7 @@
                     <CameraFotoSolid
                             class="w-5 h-5 text-text transition duration-75 dark:text-text group-hover:text-secondary dark:group-hover:text-black"/>
                 </svelte:fragment>
-                <SidebarDropdownItem class="text-text hover:text-secondary hover:bg-primary" href="/autoPortfolio"
+                <SidebarDropdownItem class="text-text hover:text-secondary hover:bg-primary" href="/auto"
                                      label="Auto"/>
                 <SidebarDropdownItem class="text-text hover:text-secondary hover:bg-primary" href="/motorrad"
                                      label="Motorrad"/>
@@ -45,7 +45,7 @@
                             class="w-5 h-5 text-text transition duration-75 dark:text-text group-hover:text-secondary dark:group-hover:text-black"/>
                 </svelte:fragment>
             </SidebarItem>
-            <SidebarItem class="text-text hover:text-secondary hover:bg-primary" href="/impre" label="Info">
+            <SidebarItem class="text-text hover:text-secondary hover:bg-primary" href="/information" label="Info">
                 <svelte:fragment slot="icon">
                     <InfoCircleSolid
                             class="w-5 h-5 text-text transition duration-75 dark:text-text group-hover:text-secondary dark:group-hover:text-black"/>
