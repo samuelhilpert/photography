@@ -825,7 +825,7 @@
                 <p style="font-size: 18px;">
                 <span style="font-size: 18px;">
                     <span style="font-weight: bold;">21.4</span>
-                    Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss internationalen Privatrecht und des ins deutsche Recht übernommenen UNKaufrechts, wenna) der Kunde seinen gewöhnlichen Aufenthalt in Deutschland hat, oderb) der Kunde seinen gewöhnlichen Aufenthalt in einem Staat hat, der nicht Mitgliedder Europäischen Union ist.
+                    Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss internationalen Privatrecht und des ins deutsche Recht übernommenen UN-Kaufrechts, wenn a) der Kunde seinen gewöhnlichen Aufenthalt in Deutschland hat, oder b) der Kunde seinen gewöhnlichen Aufenthalt in einem Staat hat, der nicht Mitglieder Europäischen Union ist.
                 </span>
                 </p>
                 <p style="font-size: 18px;">
