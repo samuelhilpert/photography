@@ -454,7 +454,7 @@
             <CloseButton on:click={() => (hidden8 = true)} class="mb-4 dark:text-white" />
         </div>
         <p>
-            Hier kannst du eine individuelle Anfrage stellen. Wähle die Kategorie, das Motiv, den Umfang und gib deine Kontaktdaten ein. Nach dem Absenden der Anfrage erhältst du ein individuelles Angebot.</p> <p>Du kannst auch den Preis berechnen lassen, während du deine Auswahl triffst bzw. bevor du die Anfrage abschickst. Dieser Preis ist der finale Preis, sollte die Anfrage angenommen werden.
+            Hier kannst du eine individuelle Anfrage stellen. Wähle die Kategorie, das Motiv, den Umfang und gib deine Kontaktdaten ein. Nach dem Absenden der Anfrage erhältst du ein individuelles Angebot.</p> <p>Du kannst auch den Preis berechnen lassen, während du deine Auswahl triffst bzw. bevor du die Anfrage abschickst. Dieser Preis ist der finale Preis, sollte die Anfrage angenommen werden, exklusive eventueller Änderungen oder Zusatzleistungen.
         </p>
         <p>Bevor du eine Abfrage abschicken kannst, musst du alle Felder ausgefüllt haben.</p>
         <p>Es handelt sich nur um eine Anfrage und stellt noch keinen Vertrag da. Sobald ich die Anfrage annehme, schicke ich dir eine Mail mit der Bestätigung des Auftrages. Sobald du mir diese bestätigst, besteht ein Vertrag.</p>
