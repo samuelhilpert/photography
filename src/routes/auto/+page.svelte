@@ -64,17 +64,6 @@
 </main>
 
 <style>
-	/**Formatierung der Bilder*/
-	.imageContainer {
-		@apply w-screen;
-		display: flex;
-		gap: 10px;
-	}
-
-	.images {
-		max-width: 20%;
-		height: auto;
-	}
 
 	/**Header Text mit Card stylen*/
 	.card {

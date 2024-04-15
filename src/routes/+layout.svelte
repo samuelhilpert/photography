@@ -27,11 +27,5 @@
 		top: 16%;
 	}
 
-	.layout {
-		@apply flex h-full bg-background;
-	}
 
-	.footer {
-		@apply bottom-0 w-screen;
-	}
 </style>
